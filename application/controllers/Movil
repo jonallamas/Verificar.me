@@ -14,7 +14,7 @@ class Movil extends Base_Controller {
 
 	public function login()
 	{
-  	$login_correo = $this->input->post('f_login_correo');
+  		$login_correo = $this->input->post('f_login_correo');
 		$login_password = $this->input->post('f_login_password');
 		// $login_password = md5($login_password);
 		
@@ -33,10 +33,13 @@ class Movil extends Base_Controller {
 		}else{
 			$usuario = array();
 		}
-    return $usuario;
+    		return $usuario;
 	}
 
-	public function salir(){
+	public function obtenerLocalesUsuario(){
+		//Obtener id usuario y obtener los locales a los que 
+		//pertenece en la por la tabla "persona-locales" luego devolver un array con los locales
+		
 
 	}
   
