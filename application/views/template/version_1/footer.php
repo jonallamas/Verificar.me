@@ -1,10 +1,5 @@
-          </div>
-        </div>
       </div>
     </div>
-    <!-- END: Page Main-->
-
-    <!-- BEGIN: Footer-->
 
     <div id="intro">
         <div class="row">
@@ -31,7 +26,7 @@
                             </div>
                             <div class="carousel-item slide-1">
                                 <img src="<?php echo base_url(); ?>assets/css/images/gallery/intro-slide-1.png" alt="" class="responsive-img animated fadeInUp slide-1-img" style="width: 150px;">
-                                <h5 class="intro-step-title mt-7 center animated fadeInUp">Bienvenido/a a <?php echo $this->session->userdata('usuario_nombre'); ?></h5>
+                                <h5 class="intro-step-title mt-7 center animated fadeInUp">Bienvenido/a, <?php echo $this->session->userdata('usuario_nombre'); ?></h5>
                                 <p class="intro-step-text mt-5 animated fadeInUp">En este entorno podrás gestionar las
                                     horas de entrada y de salida de tus empleados. Ademas, podrás añadir locales o tiendas
                                     y los empleados que haya en ellas.</p>
@@ -146,27 +141,71 @@
 
     <footer class="page-footer footer footer-static footer-dark gradient-45deg-indigo-purple gradient-shadow navbar-border navbar-shadow">
       <div class="footer-copyright">
-        <div class="container"><span>&copy; 2019 - <a href="https://verificar.me" target="_blank">{{ config('app.name') }}</a> Derechos reservados.</span><span class="right hide-on-small-only"><a href="https://verificar.me/ayuda">¿Necesitas ayuda?</a></span></div>
+        <div class="container"><span>Copyright &copy; 2019 V1.1 - <a href="https://verificar.me" target="_blank">Verifica.me</a></span><span class="right hide-on-small-only"><a href="https://verificar.me/ayuda">¿Necesitas ayuda?</a></span></div>
       </div>
     </footer>
 
-    <!-- END: Footer-->
-    <!-- BEGIN VENDOR JS-->
+    <div class="preloader-wrapper" id="preloader">
+        <div class="preloader">
+            <div class="sk-circle">
+                <div class="preloader-wrapper big active">
+                    <div class="spinner-layer spinner-blue">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+
+                    <div class="spinner-layer spinner-red">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+
+                    <div class="spinner-layer spinner-yellow">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+
+                    <div class="spinner-layer spinner-green">
+                        <div class="circle-clipper left">
+                            <div class="circle"></div>
+                        </div><div class="gap-patch">
+                            <div class="circle"></div>
+                        </div><div class="circle-clipper right">
+                            <div class="circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="<?php echo base_url(); ?>assets/css/js/vendors.min.js" type="text/javascript"></script>
-    <!-- BEGIN VENDOR JS-->
-    <!-- BEGIN PAGE VENDOR JS-->
+
     <script src="<?php echo base_url(); ?>assets/css/vendors/chartjs/chart.min.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist.min.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-tooltip.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-fill-donut.min.js" type="text/javascript"></script>
-    <!-- END PAGE VENDOR JS-->
-    <!-- BEGIN THEME  JS-->
+
     <script src="<?php echo base_url(); ?>assets/css/js/plugins.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/css/js/custom/custom-script.js" type="text/javascript"></script>
-    <!-- END THEME  JS-->
-    <!-- BEGIN PAGE LEVEL JS-->
+
     <script src="<?php echo base_url(); ?>assets/css/js/scripts/dashboard-modern.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/css/js/scripts/intro.js" type="text/javascript"></script>
-    <!-- END PAGE LEVEL JS-->
+
+    <script src="<?php echo base_url(); ?>assets/js/script.js" type="text/javascript"></script>
   </body>
 </html>

@@ -1,17 +1,19 @@
     <aside class="sidenav-main nav-expanded nav-lock nav-collapsible sidenav-dark sidenav-active-square">
       <div class="brand-sidebar">
-        <h1 class="logo-wrapper"><a class="brand-logo darken-1" href="index.html"><img src="<?php echo base_url(); ?>assets/css/images/logo/materialize-logo-color.png" alt="materialize logo"/><span class="logo-text hide-on-med-and-down">Materialize</span></a><a class="navbar-toggler" href="#"><i class="material-icons">radio_button_checked</i></a></h1>
+        <h1 class="logo-wrapper"><a class="brand-logo darken-1" href="index.html"><img src="<?php echo base_url(); ?>assets/css/images/logo/materialize-logo-color.png" alt="materialize logo"/><span class="logo-text hide-on-med-and-down">Materialize</span></a>
+          <!-- <a class="navbar-toggler" href="#"><i class="material-icons">radio_button_checked</i></a> -->
+        </h1>
       </div>
       <ul class="sidenav sidenav-collapsible leftside-navigation collapsible sidenav-fixed menu-shadow" id="slide-out" data-menu="menu-navigation" data-collapsible="menu-accordion">
         <li class="navigation-header"><a class="navigation-header-text">PANEL DE CONTROL </a><i class="navigation-header-icon material-icons">more_horiz</i>
         </li>
 
 
-              <li class="active"><a class="collapsible-body active" href="/" data-i18n=""><i class="material-icons">settings_input_svideo</i><span>Inicio</span></a>
+              <li class="active"><a class="collapsible-body <?php if($seccion == 'principal'){ echo 'active'; } ?>" href="<?php echo base_url(); ?>panel" data-i18n=""><i class="material-icons">settings_input_svideo</i><span>Inicio</span></a>
               </li>
-              <li><a class="collapsible-body" href="establecimientos" data-i18n=""><i class="material-icons">home</i><span>Establecimientos</span></a>
+              <li><a class="collapsible-body <?php if($seccion == 'establecimientos'){ echo 'active'; } ?>" href="<?php echo base_url(); ?>establecimientos" data-i18n=""><i class="material-icons">home</i><span>Establecimientos</span></a>
               </li>
-              <li><a class="collapsible-body" href="empleados" data-i18n=""><i class="material-icons">assignment_ind</i><span>Empleados</span></a>
+              <li><a class="collapsible-body" href="<?php echo base_url(); ?>empleados" data-i18n=""><i class="material-icons">assignment_ind</i><span>Empleados</span></a>
               </li>
 
 

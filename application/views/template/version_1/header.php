@@ -1,42 +1,36 @@
 <!DOCTYPE html>
-<html class="loading" lang="en" data-textdirection="ltr">
+<html class="loading" lang="es" data-textdirection="ltr">
   <!-- BEGIN: Head-->
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Plataforma para pymes y empresas. Gestiona y registra las horas de tus trabajadores de manera sencilla.">
-    <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template, eCommerce dashboard, analytic dashboard">
-    <meta name="author" content="{{ config('app.name">
 
-    <title>Panel de Control | {{ config('app.name</title>
+    <title><?php echo $titulo; ?> | Verifica.me</title>
 
     <script> var base_url = '<?php echo base_url(); ?>'; </script>
 
     <link rel="apple-touch-icon" href="<?php echo base_url(); ?>assets/css/images/favicon/apple-touch-icon-152x152.png">
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>assets/css/images/favicon/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- BEGIN: VENDOR CSS-->
+
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/animate-css/animate.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-tooltip.css">
-    <!-- END: VENDOR CSS-->
-    <!-- BEGIN: Page Level CSS-->
+
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/theme/materialize.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/theme/style.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/dashboard-modern.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/intro.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/pricing.css">
-    <!-- END: Page Level CSS-->
-    <!-- BEGIN: Custom CSS-->
+
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/custom/custom.css">
-    <!-- END: Custom CSS-->
+
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/theme/modification.css">
   </head>
-  <!-- END: Head-->
   <body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu 2-columns  " data-open="click" data-menu="vertical-modern-menu" data-col="2-columns">
 
-    <!-- BEGIN: Header-->
     <header class="page-topbar" id="header">
       <div class="navbar navbar-fixed">
         <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-dark gradient-45deg-indigo-purple no-shadow">
@@ -48,18 +42,16 @@
               <!-- <li class="hide-on-med-and-down"><a class="waves-effect waves-block waves-light translation-button" href="javascript:void(0);" data-target="translation-dropdown"><span class="flag-icon flag-icon-gb"></span></a></li> -->
               <li class="hide-on-med-and-down"><a class="waves-effect waves-block waves-light toggle-fullscreen" href="javascript:void(0);"><i class="material-icons">settings_overscan</i></a></li>
               <li class="hide-on-large-only"><a class="waves-effect waves-block waves-light search-button" href="javascript:void(0);"><i class="material-icons">search</i></a></li>
-              <li><a class="waves-effect waves-block waves-light notification-button" href="javascript:void(0);" data-target="notifications-dropdown"><i class="material-icons">notifications_none<small class="notification-badge">5</small></i></a></li>
+              <li><a class="waves-effect waves-block waves-light notification-button" href="javascript:void(0);" data-target="notifications-dropdown"><i class="material-icons">notifications_none<small class="notification-badge pulse">5</small></i></a></li>
               <li><a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown"><span class="avatar-status avatar-online"><img src="<?php echo base_url(); ?>assets/css/images/avatar/avatar-7.png" alt="avatar"><i></i></span></a></li>
               <li><a class="waves-effect waves-block waves-light sidenav-trigger" href="#" data-target="slide-out-right"><i class="material-icons">format_indent_increase</i></a></li>
             </ul>
-            <!-- translation-button-->
             <!-- <ul class="dropdown-content" id="translation-dropdown">
               <li><a class="grey-text text-darken-1" href="#!"><i class="flag-icon flag-icon-gb"></i> English</a></li>
               <li><a class="grey-text text-darken-1" href="#!"><i class="flag-icon flag-icon-fr"></i> French</a></li>
               <li><a class="grey-text text-darken-1" href="#!"><i class="flag-icon flag-icon-cn"></i> Chinese</a></li>
               <li><a class="grey-text text-darken-1" href="#!"><i class="flag-icon flag-icon-de"></i> German</a></li>
             </ul> -->
-            <!-- notifications-dropdown-->
             <ul class="dropdown-content" id="notifications-dropdown">
               <li>
                 <h6>NOTIFICATIONS<span class="new badge">5</span></h6>
@@ -81,13 +73,12 @@
                 <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">1 week ago</time>
               </li>
             </ul>
-            <!-- profile-dropdown-->
             <ul class="dropdown-content" id="profile-dropdown">
-              <li><a class="grey-text text-darken-1" href="user-profile-page.html"><i class="material-icons">person_outline</i> Profile</a></li>
-              <li><a class="grey-text text-darken-1" href="app-chat.html"><i class="material-icons">chat_bubble_outline</i> Chat</a></li>
-              <li><a class="grey-text text-darken-1" href="page-faq.html"><i class="material-icons">help_outline</i> Help</a></li>
-              <li class="divider"></li>
-              <li><a class="grey-text text-darken-1" href="user-lock-screen.html"><i class="material-icons">lock_outline</i> Lock</a></li>
+              <!-- <li><a class="grey-text text-darken-1" href="user-profile-page.html"><i class="material-icons">person_outline</i> Profile</a></li> -->
+              <!-- <li><a class="grey-text text-darken-1" href="app-chat.html"><i class="material-icons">chat_bubble_outline</i> Chat</a></li> -->
+              <!-- <li><a class="grey-text text-darken-1" href="page-faq.html"><i class="material-icons">help_outline</i> Help</a></li> -->
+              <!-- <li class="divider"></li> -->
+              <!-- <li><a class="grey-text text-darken-1" href="user-lock-screen.html"><i class="material-icons">lock_outline</i> Lock</a></li> -->
               <li><a class="grey-text text-darken-1" href="<?php echo base_url(); ?>panel/salir"><i class="material-icons">keyboard_tab</i> Logout</a></li>
             </ul>
           </div>
@@ -104,21 +95,8 @@
         </nav>
       </div>
     </header>
-    <!-- END: Header-->
 
-
-    <!-- Insertar Menu -->
     <?php echo $menu; ?>
-    <!-- BEGIN: SideNav-->
-
-    <!-- END: SideNav-->
-
-    <!-- END: Menu-->
-
-    <!-- BEGIN: Page Main-->
+    
     <div id="main">
       <div class="row">
-        <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
-        <div class="col s12">
-          <div class="container">
-            <!-- Current balance & total transactions cards-->

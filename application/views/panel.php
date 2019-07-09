@@ -1,3 +1,4 @@
+<div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
 <div class="row mt-4">
 	<div class="col s12 l4">
 		<div class="card animate fadeLeft">

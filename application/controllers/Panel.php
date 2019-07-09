@@ -10,9 +10,8 @@ class Panel extends Base_Controller {
 		$this->load->model('modulo_usuario/usuario_model');
 
 		//Configurando el data_header
-		$this->data_header['titulo'] = 'Panel de administración - Verifica.me';
-		$this->dataMenu["seccion"] = "sitioweb";
-		// $this->data_header['menu']   = $this->load->view('menu',$this->dataMenu,true);
+		$this->data_header['titulo'] = 'Panel de administración';
+		$this->dataMenu["seccion"] = "principal";
 	}
 
 	public function index()
