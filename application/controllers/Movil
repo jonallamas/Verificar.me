@@ -40,7 +40,17 @@ class Movil extends Base_Controller {
 		//Obtener id usuario y obtener los locales a los que 
 		//pertenece en la por la tabla "persona-locales" luego devolver un array con los locales
 		
+		$idUsuario = $this->input->get('idUsuario');
+		
 
+	}
+	
+	public function insertarHora(){
+		//Obtiene el id usuario y la hora de entrada o salida diferenciada por una letra al principio del texto (E o S)
+		// y la inserta en la bd del usuario
+		
+		$idUsuario = $this->input->get('idUsuario');
+		$hora = $this->input->get('hora');
 	}
   
 }
