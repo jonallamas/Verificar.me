@@ -18,11 +18,11 @@ class Movil extends Base_Controller {
 
 		$this->load->model('modulo_usuario/usuario_model');
 
-		$this->load->model('establecimientosusuarios_model');
+		// $this->load->model('establecimientosusuarios_model');
 
-		$this->load->model('establecimientos_model');
+		// $this->load->model('establecimientos_model');
 
-		$this->load->model('registros_model');
+		// $this->load->model('registros_model');
 
 
 
@@ -36,11 +36,9 @@ class Movil extends Base_Controller {
 
 	{
 
-		
+  		// $login_correo = $this->input->post('f_login_correo');
 
-  		$login_correo = $this->input->post('f_login_correo');
-
-		$login_password = $this->input->post('f_login_password');
+		// $login_password = $this->input->post('f_login_password');
 
 		
 
@@ -51,12 +49,9 @@ class Movil extends Base_Controller {
 		$login_correo = "demo@verificar.me";
 
 		$login_password = "c514c91e4ed341f263e458d44b3bb0a7";
-
 		
 
 		$validacion = $this->usuario_model->login($login_correo, $login_password);
-
-
 
 		if($validacion){
 
