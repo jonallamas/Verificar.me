@@ -37,50 +37,30 @@ class Movil extends Base_Controller {
 	{
 
   		// $login_correo = $this->input->post('f_login_correo');
-
 		// $login_password = $this->input->post('f_login_password');
-
-		
 
 		//Prueba
 
-		
-
-		$login_correo = "demo@verificar.me";
-
+		$login_correo = "demo@verifica.me";
 		$login_password = "c514c91e4ed341f263e458d44b3bb0a7";
 		
-
 		$validacion = $this->usuario_model->login($login_correo, $login_password);
 
 		if($validacion){
-
 			$usuario = array(
-
 				'conectado' => 1, 
-
 				'usuario_id' => $validacion->id, 
-
 				'usuario_validado' => $validacion->validado, 
-
 				'usuario_nombre' => $validacion->nombre, 
-
 				'usuario_apellido' => $validacion->apellido, 
-
 				'usuario_nombre_completo' => $validacion->apellido.' '.$validacion->nombre, 
-
 				'usuario_correo' => $validacion->correo
-
 			);
-
+    		json_encode($usuario);
 		}else{
-
 			$usuario = array();
-
 		}
-
-    		return $usuario;
-
+		return $usuario;
 	}
 
 
