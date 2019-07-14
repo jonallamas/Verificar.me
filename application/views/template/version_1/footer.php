@@ -1,7 +1,7 @@
       </div>
     </div>
 
-    <div id="intro">
+    <!-- <div id="intro">
         <div class="row">
             <div class="col s12">
                 <div id="img-modal" class="modal white">
@@ -49,7 +49,6 @@
 
                             </div>
                             <div class="carousel-item slide-3">
-                                <!--<img src="<?php echo base_url(); ?>assets/css/images/gallery/intro-app.png" alt="" class="responsive-img slide-1-img">-->
                                 <h5 class="intro-step-title mt-7 center">¡Tu cuenta es Gratis!</h5>
                                 <p class="intro-step-text mt-5">Si necesitas más, puedes actualizar el plan de tu cuenta en cualquier momento.</p>
                                 <div class="col s12">
@@ -107,37 +106,13 @@
                                         </div>
                                     </div>
                                 </div>
-                              <!--  <h5 class="intro-step-title mt-7 center">Plan Recomendado</h5>
-                                <h5 class="intro-step-title mt-5 center">4.95 €/mes</h5>
-                                <div class="row">
-                                    <div class="col m5 offset-m1 s12">
-                                        <ul class="feature-list left-align">
-                                            <li><i class="material-icons">check</i> Gestión hasta de 3 empleados</li>
-                                            <li><i class="material-icons">check</i> Añadir 2 Establecimientos</li>
-                                            <li><i class="material-icons">check</i> Lista de tareas para tus empleados</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col m6 s12">
-                                        <ul class="feature-list left-align">
-                                            <li><i class="material-icons">check</i>Contacts Application</li>
-                                            <li><i class="material-icons">check</i>Full Calendar</li>
-                                            <li><i class="material-icons">check</i> Ecommerce Application</li>
-                                        </ul>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col s12 center">
-                                            <button class="get-started btn waves-effect waves-light gradient-45deg-purple-deep-orange mt-3 modal-close">Get
-                                                Started</button>
-                                        </div>
-                                    </div>
-                                </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <footer class="page-footer footer footer-static footer-dark gradient-45deg-indigo-purple gradient-shadow navbar-border navbar-shadow">
       <div class="footer-copyright">
@@ -193,19 +168,5 @@
         </div>
     </div>
 
-    <script src="<?php echo base_url(); ?>assets/css/js/vendors.min.js" type="text/javascript"></script>
-
-    <script src="<?php echo base_url(); ?>assets/css/vendors/chartjs/chart.min.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist.min.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-tooltip.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-fill-donut.min.js" type="text/javascript"></script>
-
-    <script src="<?php echo base_url(); ?>assets/css/js/plugins.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>assets/css/js/custom/custom-script.js" type="text/javascript"></script>
-
-    <script src="<?php echo base_url(); ?>assets/css/js/scripts/dashboard-modern.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>assets/css/js/scripts/intro.js" type="text/javascript"></script>
-
-    <script src="<?php echo base_url(); ?>assets/js/script.js" type="text/javascript"></script>
   </body>
 </html>

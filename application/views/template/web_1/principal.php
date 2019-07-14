@@ -421,7 +421,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <a href="#" class="btn">Adquirir</a>
+                                            <a href="<?php echo base_url(); ?>suscripcion/registro/basico" class="btn">Adquirir</a>
                                         </div>
                                     </div>
                                     <!--end of Single price plan -->
@@ -451,7 +451,7 @@
 
                                                 </ul>
                                             </div>
-                                            <a href="#" class="btn">Adquirir</a>
+                                            <a href="<?php echo base_url(); ?>suscripcion/registro/pro" class="btn">Adquirir</a>
                                         </div>
                                     </div>
                                     <!--end of Single price plan -->
@@ -480,7 +480,7 @@
                                                   </li>
                                                 </ul>
                                             </div>
-                                            <a href="#" class="btn">Adquirir</a>
+                                            <a href="<?php echo base_url(); ?>suscripcion/registro/ultra" class="btn">Adquirir</a>
                                         </div>
                                     </div>
                                     <!--end of Single price plan -->

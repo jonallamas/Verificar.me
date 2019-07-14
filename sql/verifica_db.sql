@@ -14742,13 +14742,11 @@ INSERT INTO `empresa` (`id`, `nombre`, `dni`, `nif`, `fecha_registro`, `estado`)
 
 CREATE TABLE `local` (
   `id` int(10) NOT NULL,
-  `id_empresa` int(11) NOT NULL,
   `nombre` varchar(64) COLLATE latin1_spanish_ci NOT NULL,
   `direccion` varchar(100) COLLATE latin1_spanish_ci NOT NULL,
   `id_ciudad` decimal(3,0) UNSIGNED ZEROFILL NOT NULL,
   `id_provincia` decimal(2,0) UNSIGNED ZEROFILL NOT NULL,
   `id_cp` decimal(5,0) UNSIGNED ZEROFILL NOT NULL,
-  `id_sus` int(11) NOT NULL,
   `fecha_registro` datetime NOT NULL,
   `estado` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;

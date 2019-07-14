@@ -42,39 +42,52 @@ class Establecimientos_model extends CI_Model {
         return $query->result();
     }
 
+    // public function obtener_cp_typeahead($busqueda)
+    // {
+    //     $this->db->select('codigopostal.id, 
+    //         CONCAT(gestioo_agenda_contactos.apellidos, " ", gestioo_agenda_contactos.nombre) as nombre_completo');
+    //     $this->db->from('codigopostal');
+    //     $this->db->where('(codigopostal.codigopostalid LIKE "'.$busqueda.'%" OR gestioo_agenda_contactos.nombre LIKE "'.$busqueda.'%" OR gestioo_agenda_contactos.dni LIKE "'.$busqueda.'%") AND gestioo_agenda_contactos.estado = 1');
+    //     $this->db->limit(12);
+
+    //     $query = $this->db->get();
+    //     return $query->result();
+    // } 
+
     // Localidades y provincias
 
     public function obtener_provincias()
     {
-        $this->db->select('dubi_provincias.*');
-        $this->db->from('dubi_provincias');
+        $this->db->select('provincia.*');
+        $this->db->from('provincia');
+        $this->db->order_by('provincia.provincia', 'asc');
         $query = $this->db->get();
         return $query->result();    
     }
 
     public function obtener_provincias_id($id)
     {
-        $this->db->select('dubi_provincias.*');
-        $this->db->from('dubi_provincias');
-        $this->db->where('dubi_provincias.id_pais', $id);
+        $this->db->select('provincia.*');
+        $this->db->from('provincia');
+        $this->db->where('provincia.provinciaid', $id);
         $query = $this->db->get();
         return $query->result();    
     }    
 
-    public function obtener_localidades()
+    public function obtener_poblaciones()
     {
-        $this->db->select('dubi_localidades.*');
-        $this->db->from('dubi_localidades');
+        $this->db->select('poblacion.*');
+        $this->db->from('poblacion');
         $query = $this->db->get();
         return $query->result();    
     }
 
-    public function obtener_localidades_id($id)
+    public function obtener_poblaciones_id($id)
     {
-        $this->db->select('dubi_localidades.*');
-        $this->db->from('dubi_localidades');
-        $this->db->where('dubi_localidades.provincia_id', $id);
-        $this->db->order_by('dubi_localidades.nombre', 'asc');
+        $this->db->select('poblacion.*');
+        $this->db->from('poblacion');
+        $this->db->where('poblacion.provinciaid', $id);
+        $this->db->order_by('poblacion.poblacion', 'asc');
         $query = $this->db->get();
         return $query->result();    
     } 

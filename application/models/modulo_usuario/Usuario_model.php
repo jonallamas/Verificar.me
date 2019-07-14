@@ -31,6 +31,15 @@ class Usuario_model extends CI_Model {
         return $query->row();
     }
 
+    public function obtener_cuenta($id)
+    {
+        $this->db->select('cuenta.*');
+        $this->db->from('cuenta');
+        $this->db->where('cuenta.id_cliente', $id);
+        $query = $this->db->get();
+        return $query->row();
+    }
+
     // public function validar_usuario($usuario)
     // {
     //     $this->db->select('usuarios.*');

@@ -21,43 +21,46 @@
 <div  class="col s12 l12" id="modulo_carga">
 	<div class="container">
 		<div class="section">
-			<div id="Form-advance" class="card card card-default scrollspy">
+			<div class="card card card-default scrollspy" style="overflow: visible !important;">
 			    <div class="card-content">
 			      	<h4 class="card-title">Agrega un nuevo establecimiento</h4>
-			      	<form class="col s12" action="<?php echo base_url(); ?>emprendimientos/guardar" method="post" id="" name="">
+			      	<form action="<?php echo base_url(); ?>establecimientos/guardar" method="post" id="f_form" name="f_form">
 			        	<div class="row">
-			          		<div class="input-field col m6 s12">
-			            		<input id="first_name01" type="text">
-			            		<label for="first_name01">First Name</label>
+			          		<div class="input-field col m4 s12">
+			            		<input id="f_establecimiento_nombre" name="f_establecimiento_nombre" type="text">
+			            		<label for="f_establecimiento_nombre">Nombre</label>
 			          		</div>
-			          		<div class="input-field col m6 s12">
-			            		<input id="last_name" type="text">
-			            		<label for="last_name">Last Name</label>
-			          		</div>
+			          		<div class="input-field col m8 s12">
+                      <input id="f_establecimiento_direccion" name="f_establecimiento_direccion" type="text">
+                      <label for="f_establecimiento_direccion">Dirección</label>
+                    </div>
 			        	</div>
-			        	<div class="row">
-			          		<div class="input-field col s12">
-				            	<input id="email5" type="email">
-				            	<label for="email">Email</label>
-			          		</div>
-			        	</div>
-			        	<div class="row">
-			          		<div class="input-field col s12">
-					            <input id="password6" type="password">
-					            <label for="password">Password</label>
-			          		</div>
-			        	</div>
-			        	<div class="row">
-			          		<div class="input-field col s12">
-			            		<textarea id="message5" class="materialize-textarea"></textarea>
-			            		<label for="message">Message</label>
-			          		</div>
-			          		<div class="row">
-			            		<div class="input-field col s12">
-			              			<button class="btn cyan waves-effect waves-light right" type="submit" name="action">Crear</button>
-			            		</div>
-			          		</div>
-			        	</div>
+                <div class="row">
+                  <div class="col m5 s12">
+                    <label for="f_establecimiento_provincia">Provincia</label>
+                    <select class="browser-default" name="f_establecimiento_provincia" id="f_establecimiento_provincia">
+                      <option value="" disabled selected>Seleccione una opción</option>
+                      <?php foreach ($provincias as $provincia) { ?>
+                      <option value="<?php echo $provincia->provinciaid; ?>"><?php echo $provincia->provincia; ?></option>
+                      <?php } ?>
+                    </select>
+                  </div>
+                  <div class="col m5 s12">
+                    <label for="f_establecimiento_poblacion">Población</label>
+                    <select disabled class="browser-default" name="f_establecimiento_poblacion" id="f_establecimiento_poblacion">
+                      <option value="" selected>Seleccione una opción</option>
+                    </select>
+                  </div>
+                  <div class="col m2 s12">
+                      <label for="f_establecimiento_cod_postal">Cód. postal</label>
+                      <input name="f_establecimiento_cod_postal" id="f_establecimiento_cod_postal" type="text">
+                    </div>
+                </div>
+	          		<div class="row">
+	            		<div class="input-field col s12">
+	              			<button class="btn cyan waves-effect waves-light right" type="submit">Crear</button>
+	            		</div>
+	          		</div>
 			      	</form>
 			    </div>
 			</div>
@@ -77,49 +80,21 @@
 				<div class="col s12 m12 l12">
 					<div id="responsive-table" class="card card card-default scrollspy">
 						<div class="card-content">
-							<h4 class="card-title">Responsive Table</h4>
+							<h4 class="card-title">Lista de establecimientos</h4>
 							<div class="row">
 								<div class="col s12"></div>
 								<div class="col s12">
-									<table class="responsive-table">
+									<table class="responsive-table" id="tabla_establecimientos">
 										<thead>
 											<tr>
-												<th data-field="id">Name</th>
-												<th class="mismalinea" data-field="name">Item Name</th>
-												<th class="mismalinea right-align" data-field="price" width="5%">Price</th>
-												<th class="right-align" data-field="total" width="5%">Total</th>
-												<th data-field="status" width="1%">Status</th>
+												<th>id</th>
+												<th class="mismalinea">Nombre</th>
+												<th width="1%">Provincia</th>
+                        <th width="1%">Población</th>
+												<th width="1%">Acciones</th>
 											</tr>
 										</thead>
 										<tbody>
-											<tr>
-												<td>Alvin</td>
-												<td>Eclair</td>
-												<td class="right-align">$0.87</td>
-												<td class="right-align">$1.87</td>
-												<td class="center-align"><a href="#"><i class="material-icons pink-text">edit</i></a></td>
-											</tr>
-											<tr>
-												<td>Alan</td>
-												<td>Jellybean</td>
-												<td class="right-align">$3.76</td>
-												<td class="right-align">$10.87</td>
-												<td class="center-align"><a href="#"><i class="material-icons pink-text">edit</i></a></td>
-											</tr>
-											<tr>
-												<td>Jonathan</td>
-												<td>Lollipop</td>
-												<td class="right-align">$7.00</td>
-												<td class="right-align">$12.87</td>
-												<td class="center-align"><a href="#"><i class="material-icons pink-text">edit</i></a></td>
-											</tr>
-											<tr>
-												<td>Shannon</td>
-												<td>KitKat</td>
-												<td class="right-align">$9.99</td>
-												<td class="right-align">$14.87</td>
-												<td class="center-align"><a href="#"><i class="material-icons pink-text">edit</i></a></td>
-											</tr>
 										</tbody>
 									</table>
 								</div>
@@ -131,3 +106,75 @@
 		</div>
 	</div>
 </div>
+
+<script>
+	// Scripts de Validación
+	$(document).ready(function() 
+	{
+	    $("#f_establecimiento_provincia").change(function()
+	    {
+	      if(this.value == 0)
+	      {
+	        $("#f_establecimiento_poblacion").val(0);
+	        $("#f_establecimiento_poblacion").prop('disabled', 'disabled');
+	      }
+	      else
+	      {
+	        $.ajax({
+	          type: "POST",
+	          data: {
+	            'provincia_id'    : this.value
+	          },
+	          url: "establecimientos/obtener_poblaciones",
+	          success: function(data) {
+	            $("#f_establecimiento_poblacion").html('<option value="" disabled selected="selected">Seleccione una opción</option>');
+	            
+	            var poblaciones = jQuery.parseJSON(data);
+	            
+	            $.each(poblaciones, function(key, value) {
+	              $('#f_establecimiento_poblacion').append('<option value="'+poblaciones[key].poblacionid+'">'+poblaciones[key].poblacion+'</option>');
+	            });
+	          }
+	        });
+	        
+	        $("#f_establecimiento_poblacion").val(0);
+	        $("#f_establecimiento_poblacion").prop('disabled', false);
+	      }
+	    }); 
+
+		tabla = $('#tabla_establecimientos').DataTable({
+			"autoWidth": false,
+			"language": {
+				"url": base_url+"scripts/script_tablas/spanish.json"
+			},
+			serverSide: true,
+			columns: [
+				{ data: 'id',				'visible':false, 	'orderable': true, 	'searchable': false },
+				// { data: 'icono', 			'visible':true, 	'orderable': false, 'searchable': false },
+				{ data: 'nombre',		'visible':true, 	'orderable': true, 	'searchable': true },		
+		        { data: 'provincia_nombre',   'visible':true,   'orderable': true,  'searchable': true },   
+		        { data: 'poblacion_nombre',   'visible':true,   'orderable': true,  'searchable': true, 'render': function(val, type, row) 
+		        	{
+		        		return '<span class="mismalinea">'+row.poblacion_nombre+'</span>';
+		        	}
+		    	},   	
+				{ data: 'id', 				'visible':true, 	'orderable': false, 'searchable': false, 'render': function (val, type, row)
+          			{
+	            		var opciones = '<div class="mismalinea">';
+						opciones += '<a href="establecimientos/establecimiento/'+row.codigo+'" class="waves-effect waves-light btn-small">Entrar</a> ';
+	            		opciones += '</div>';
+
+			            return opciones;
+			    	}
+			    }
+			],
+			order: [
+				[ 0, 'desc' ],
+			],
+			ajax: {
+				url: 'establecimientos/lista',
+				type: 'POST'
+			}
+		});
+	});
+</script>

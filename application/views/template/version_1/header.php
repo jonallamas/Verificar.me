@@ -14,6 +14,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url(); ?>assets/css/images/favicon/favicon-32x32.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/fonts/fontawesome/css/all.css">
+
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/animate-css/animate.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist.min.css">
@@ -28,6 +30,36 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/custom/custom.css">
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/theme/modification.css">
+
+    <script src="<?php echo base_url(); ?>assets/css/js/vendors.min.js" type="text/javascript"></script>
+
+    <script src="<?php echo base_url(); ?>assets/css/vendors/chartjs/chart.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-tooltip.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-fill-donut.min.js" type="text/javascript"></script>
+
+    <script src="<?php echo base_url(); ?>assets/css/js/plugins.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/css/js/custom/custom-script.js" type="text/javascript"></script>
+
+    <script src="<?php echo base_url(); ?>assets/css/js/scripts/dashboard-modern.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/css/js/scripts/intro.js" type="text/javascript"></script>
+
+    <script src="<?php echo base_url(); ?>assets/js/script.js" type="text/javascript"></script>
+
+    <!-- Datatables -->
+    <script type="text/javascript" src="<?php echo base_url(); ?>scripts/script_tablas/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>scripts/script_tablas/dataTables.bootstrap.min.js"></script>
+    <link href="<?php echo base_url(); ?>scripts/script_tablas/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+
+    <!-- Typeahead -->
+    <link href="<?php echo base_url(); ?>scripts/script_typeahead/typeahead.css" rel="stylesheet">
+    <script src="<?php echo base_url(); ?>scripts/script_typeahead/typeahead.bundle.js"></script>
+
+    <!-- PNotify -->
+    <script src="<?php echo base_url(); ?>scripts/script_pnotify/pnotify.custom.min.js?v=2.1"></script>
+    <script src="<?php echo base_url(); ?>scripts/script_pnotify/pnotify.conf.min.js?v=2.1"></script>
+    <link href="<?php echo base_url(); ?>scripts/script_pnotify/pnotify.custom.min.css?v=2.1" rel="stylesheet">
+    
   </head>
   <body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu 2-columns  " data-open="click" data-menu="vertical-modern-menu" data-col="2-columns">
 

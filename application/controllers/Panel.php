@@ -62,27 +62,54 @@ class Panel extends Base_Controller {
 		// exit();
 
 		if($validacion){
-			$data_session = array(
-				'conectado' => 1, 
-				'usuario_id' => $validacion->id, 
-				'usuario_validado' => $validacion->validado, 
-				'usuario_nombre' => $validacion->nombre, 
-				'usuario_apellido' => $validacion->apellido, 
-				'usuario_nombre_completo' => $validacion->apellido.' '.$validacion->nombre, 
-				'usuario_correo' => $validacion->correo
-			);
-
-			$this->session->set_userdata($data_session);
+			$cuenta = $this->usuario_model->obtener_cuenta($validacion->id);
 
 			// $data_login = array('conexion'    => date('Y-m-d H:i:s'));
 			// $this->usuario_model->modifica($data_login, $validacion->id);
+			if($cuenta){
+				$data_session = array(
+					'conectado' => 1, 
+					'usuario_id' => $validacion->id, 
+					'usuario_validado' => $validacion->validado, 
+					'usuario_nombre' => $validacion->nombre, 
+					'usuario_apellido' => $validacion->apellido, 
+					'usuario_nombre_completo' => $validacion->apellido.' '.$validacion->nombre, 
+					'usuario_correo' => $validacion->correo,
+					'usuario_tipo' => $validacion->tipo,
+					'cuenta_id' => $cuenta->id
+				);
 
-			$return_data  = array(
-				'conectado' => 1, 
-				'error' => 0, 
-				'error_tipo' => 0, 
-				'error_text' => NULL
-			);
+				$this->session->set_userdata($data_session);
+
+				$return_data  = array(
+					'conectado' => 1, 
+					'tipo' => 1,
+					'error' => 0, 
+					'error_tipo' => 0, 
+					'error_text' => NULL
+				);
+			}else{
+				$data_session = array(
+					'conectado' => 1, 
+					'usuario_id' => $validacion->id, 
+					'usuario_validado' => $validacion->validado, 
+					'usuario_nombre' => $validacion->nombre, 
+					'usuario_apellido' => $validacion->apellido, 
+					'usuario_nombre_completo' => $validacion->apellido.' '.$validacion->nombre, 
+					'usuario_correo' => $validacion->correo,
+					'usuario_tipo' => $validacion->tipo
+				);
+
+				$this->session->set_userdata($data_session);
+
+				$return_data  = array(
+					'conectado' => 1,
+					'tipo'	=> 2, 
+					'error' => 0, 
+					'error_tipo' => 0, 
+					'error_text' => NULL
+				);
+			}
 
 			echo json_encode($return_data);
 			exit();	
@@ -90,6 +117,7 @@ class Panel extends Base_Controller {
 		}else{
 			$return_data  = array(
 				'conectado' => 0, 
+				'tipo' => 0,
 				'error' => 1, 
 				'error_tipo' => 1, 
 				'error_text' => 'Información de logueo incorrecta'
