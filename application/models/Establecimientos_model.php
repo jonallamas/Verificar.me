@@ -10,22 +10,29 @@ class Establecimientos_model extends CI_Model {
 
     public function alta($data)
     {
-        return $this->db->insert('local', $data);
+        return $this->db->insert('establecimiento', $data);
     }
 
-    public function modifica($data, $id)
+    public function modifica_x_codigo($data, $codigo)
     {
-        $this->db->where('local.id', $id);
+        $this->db->where('establecimiento.codigo', $codigo);
 
-        return $this->db->update('local', $data);
+        return $this->db->update('establecimiento', $data);
     }
 
-    public function obtener($id)
+    public function modifica_x_id($data, $id)
     {
-        $this->db->select('local.*,
-            DATE_FORMAT(local.fecha_registro, "%d/%m/%Y") as fecha_registro_formateado');
-        $this->db->from('local');
-        $this->db->where('local.id', $id);
+        $this->db->where('establecimiento.id', $id);
+
+        return $this->db->update('establecimiento', $data);
+    }
+
+    public function obtener($codigo)
+    {
+        $this->db->select('establecimiento.*,
+            DATE_FORMAT(establecimiento.fecha_registro, "%d/%m/%Y") as fecha_registro_formateado');
+        $this->db->from('establecimiento');
+        $this->db->where('establecimiento.codigo', $codigo);
 
         $query = $this->db->get();
         return $query->row();
@@ -33,10 +40,10 @@ class Establecimientos_model extends CI_Model {
 
     public function obtener_todos()
     {
-        $this->db->select('local.*,
-            DATE_FORMAT(local.fecha_registro, "%d/%m/%Y") as fecha_registro_formateado');
-        $this->db->from('local');
-        $this->db->where('local.estado', 1);
+        $this->db->select('establecimiento.*,
+            DATE_FORMAT(establecimiento.fecha_registro, "%d/%m/%Y") as fecha_registro_formateado');
+        $this->db->from('establecimiento');
+        $this->db->where('establecimiento.estado', 1);
 
         $query = $this->db->get();
         return $query->result();

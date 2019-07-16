@@ -29,6 +29,25 @@ class Establecimientos extends Base_Controller {
 		$this->load->view('template/version_1/footer');
 	}
 
+	public function editar()
+	{
+		$codigo	= $this->uri->segment(3);
+
+		$this->data_header['establecimiento'] = $this->establecimientos_model->obtener($codigo);
+		$this->data_header['provincias'] = $this->establecimientos_model->obtener_provincias();
+		$this->data_header['poblaciones'] = $this->establecimientos_model->obtener_poblaciones_id($this->data_header['establecimiento']->id_provincia);
+
+		if($this->data_header['establecimiento'])
+		{
+			$this->load->view('template/version_1/header', $this->data_header);
+			$this->load->view('establecimientos/editar');
+			$this->load->view('template/version_1/footer');
+		}
+		else{
+			redirect(base_url().'establecimientos');
+		}
+	}
+
 	public function obtener_poblaciones()
 	{
 		$provincia_id = $this->input->post('provincia_id');
@@ -43,24 +62,24 @@ class Establecimientos extends Base_Controller {
 			exit();
 		}
 
-		$establecimiento_id = $this->input->post('f_establecimiento_id');
+		$establecimiento_codigo = $this->input->post('f_establecimiento_id');
 
-		if($establecimiento_id)
+		if($establecimiento_codigo)
 		{
 			$datos_establecimiento = array(
 				'id_cuenta'		=> $this->session->userdata('cuenta_id'),
 
 				'nombre'		=> $this->input->post('f_establecimiento_nombre'),
 				'direccion'		=> $this->input->post('f_establecimiento_direccion'),
-				'id_ciudad'		=> $this->input->post('f_establecimiento_provincia'),
-				'id_provincia'	=> $this->input->post('f_establecimiento_poblacion'),
+				'id_ciudad'		=> $this->input->post('f_establecimiento_poblacion'),
+				'id_provincia'	=> $this->input->post('f_establecimiento_provincia'),
 				'id_cp'			=> $this->input->post('f_establecimiento_cod_postal'),
 				
 				'id_usuario'	=> $this->session->userdata('usuario_id'),
 				'fecha_registro'=> date('Y-m-d H:i:s')
 			);
 
-			if($this->establecimientos_model->modifica($datos_establecimiento, $establecimiento_id))
+			if($this->establecimientos_model->modifica_x_codigo($datos_establecimiento, $establecimiento_codigo))
 			{
 				// Alerta - Se pudo crear
 			}
@@ -74,8 +93,8 @@ class Establecimientos extends Base_Controller {
 
 				'nombre'		=> $this->input->post('f_establecimiento_nombre'),
 				'direccion'		=> $this->input->post('f_establecimiento_direccion'),
-				'id_ciudad'		=> $this->input->post('f_establecimiento_provincia'),
-				'id_provincia'	=> $this->input->post('f_establecimiento_poblacion'),
+				'id_ciudad'		=> $this->input->post('f_establecimiento_poblacion'),
+				'id_provincia'	=> $this->input->post('f_establecimiento_provincia'),
 				'id_cp'			=> $this->input->post('f_establecimiento_cod_postal'),
 				
 				'id_usuario'	=> $this->session->userdata('usuario_id'),
@@ -90,7 +109,7 @@ class Establecimientos extends Base_Controller {
 				$datos_codigo = array(
 					'codigo' 	=> $codigo
 				);
-				$this->establecimientos_model->modifica($datos_codigo, $establecimiento_id);
+				$this->establecimientos_model->modifica_x_id($datos_codigo, $establecimiento_id);
 				// Alerta - Se pudo crear
 				$this->session->set_userdata(array('alerta' => 3));
 			}
@@ -118,29 +137,29 @@ class Establecimientos extends Base_Controller {
 	public function lista(){
 		$cuenta_id = $this->session->userdata('cuenta_id');
 
-		$this->datatables->select('local.id as id,
-			local.nombre as nombre,
-			local.id_ciudad as id_ciudad,
-			local.id_provincia as id_provincia,
-			local.id_cp as id_cp,
-			local.codigo as codigo,
+		$this->datatables->select('establecimiento.id as id,
+			establecimiento.nombre as nombre,
+			establecimiento.id_ciudad as id_ciudad,
+			establecimiento.id_provincia as id_provincia,
+			establecimiento.id_cp as id_cp,
+			establecimiento.codigo as codigo,
 
-			local.id_ciudad as id_ciudad,
+			establecimiento.id_ciudad as id_ciudad,
 			poblacion.poblacionid as poblacion_id,
 
 			provincia.provincia as provincia_nombre,
 			poblacion.poblacion as poblacion_nombre,
 
-			local.fecha_registro as fecha_registro,
-			DATE_FORMAT(local.fecha_registro, "%d/%m/%Y") as fecha_registro_formateado,
+			establecimiento.fecha_registro as fecha_registro,
+			DATE_FORMAT(establecimiento.fecha_registro, "%d/%m/%Y") as fecha_registro_formateado,
 
-			local.estado as estado');
-		$this->datatables->from('local');
-		$this->datatables->join('provincia', 'provincia.provinciaid = local.id_provincia');
-		$this->datatables->join('poblacion', 'poblacion.poblacionid = local.id_ciudad', 'left');
-		$this->datatables->where('poblacion.provinciaid = provincia.provinciaid');
-		$this->datatables->where('local.id_cuenta', $cuenta_id);
-		$this->datatables->where('local.estado !=', 0);
+			establecimiento.estado as estado');
+		$this->datatables->from('establecimiento');
+		$this->datatables->join('provincia', 'provincia.provinciaid = establecimiento.id_provincia');
+		$this->datatables->join('poblacion', 'poblacion.poblacionid = establecimiento.id_ciudad', 'left');
+		$this->datatables->where('provincia.provinciaid = poblacion.provinciaid');
+		$this->datatables->where('establecimiento.id_cuenta', $cuenta_id);
+		$this->datatables->where('establecimiento.estado !=', 0);
 
   		echo $this->datatables->generate();
 	}

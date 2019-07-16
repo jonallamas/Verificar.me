@@ -9,3 +9,11 @@ NOTE:
 ------
 PLACE HERE YOUR OWN CSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
 WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+.btn, .btn-large, .btn-small, .btn-flat{
+	padding: 0px 1rem;
+}
+.default{
+	background-color: #fff !important;
+	color: #333 !important;
+}

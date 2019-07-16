@@ -22,29 +22,35 @@ INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `telefono`, `correo`, `log_c
 ALTER TABLE `usuarios` ADD `tipo` INT DEFAULT 2 AFTER `keymaster`;
 
 -- 12/07/2018
-ALTER TABLE `local` ADD `codigo` VARCHAR(16) DEFAULT NULL AFTER `id_sus`;
-
 CREATE TABLE IF NOT EXISTS `verifica_db`.`cuenta` (
 	`id` INT NOT NULL AUTO_INCREMENT,
 	`id_cliente` INT NOT NULL,
-	`nombre` VARCHAR(128) NOT NULL,
 	`keymaster` VARCHAR(256) DEFAULT NULL,
+	`id_suscripcion` INT DEFAULT NULL,
+	`suscripcion_periodo` INT NOT NULL,
 	`vencimiento_servicio` DATETIME DEFAULT NULL,
-	`id_usuario` INT DEFAULT NULL,
 	`estado` INT DEFAULT NULL,
 	`creado` DATETIME DEFAULT NULL,
 	`actualizado` DATETIME DEFAULT NULL,
 	PRIMARY KEY (`id`)
 )ENGINE = InnoDB;
 
-ALTER TABLE `local` ADD `id_usuario` INT DEFAULT NULL AFTER `codigo`;
+ALTER TABLE `establecimiento` ADD `id_usuario` INT DEFAULT NULL AFTER `codigo`;
 
-ALTER TABLE `empresa` ADD `id_usuario` INT DEFAULT NULL AFTER `nif`;
-ALTER TABLE `empresa` ADD `id_cuenta` INT DEFAULT NULL AFTER `id_usuario`;
+-- 16/07/2019
+CREATE TABLE IF NOT EXISTS `verifica_db`.`establecimiento` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`nombre` varchar(64) NOT NULL,
+	`id_cuenta` INT DEFAULT NULL,
+	`direccion` varchar(100) DEFAULT NULL,
+	`id_ciudad` decimal(3,0) DEFAULT NULL,
+	`id_provincia` decimal(2,0) DEFAULT NULL,
+	`id_cp` decimal(5,0) NOT NULL,
+	`codigo` VARCHAR(16) DEFAULT NULL,
+	`id_usuario` INT DEFAULT NULL,
+	`fecha_registro` datetime DEFAULT NULL,
+	`estado` int(11) DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)ENGINE = InnoDB;
 
-ALTER TABLE `local` ADD `id_cuenta` INT DEFAULT NULL AFTER `id`;
-
-ALTER TABLE `cuenta` ADD `id_suscripcion` INT DEFAULT NULL AFTER `keymaster`;
-
--- 13/07/2019
-ALTER TABLE `cuenta` ADD `suscripcion_periodo` INT NOT NULL AFTER `id_suscripcion`;
+ALTER TABLE `empresa` ADD `codigo` VARCHAR(16) DEFAULT NULL AFTER `id_cuenta`;

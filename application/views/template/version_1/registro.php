@@ -287,6 +287,8 @@
                 if(data.conectado == 1){
                     $("#alerta_login").fadeOut('fast');
                     window.location.replace(base_url+'panel');
+                }else{
+                    console.log('No fue posible');
                 }
               }
             });

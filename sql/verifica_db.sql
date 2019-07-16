@@ -14740,7 +14740,7 @@ INSERT INTO `empresa` (`id`, `nombre`, `dni`, `nif`, `fecha_registro`, `estado`)
 -- Estructura de tabla para la tabla `local`
 --
 
-CREATE TABLE `local` (
+CREATE TABLE `establecimiento` (
   `id` int(10) NOT NULL,
   `nombre` varchar(64) COLLATE latin1_spanish_ci NOT NULL,
   `direccion` varchar(100) COLLATE latin1_spanish_ci NOT NULL,

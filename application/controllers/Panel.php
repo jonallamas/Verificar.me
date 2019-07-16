@@ -81,13 +81,6 @@ class Panel extends Base_Controller {
 
 				$this->session->set_userdata($data_session);
 
-				$return_data  = array(
-					'conectado' => 1, 
-					'tipo' => 1,
-					'error' => 0, 
-					'error_tipo' => 0, 
-					'error_text' => NULL
-				);
 			}else{
 				$data_session = array(
 					'conectado' => 1, 
@@ -97,19 +90,19 @@ class Panel extends Base_Controller {
 					'usuario_apellido' => $validacion->apellido, 
 					'usuario_nombre_completo' => $validacion->apellido.' '.$validacion->nombre, 
 					'usuario_correo' => $validacion->correo,
-					'usuario_tipo' => $validacion->tipo
+					'usuario_tipo' => $validacion->tipo,
+					'cuenta_id' => NULL
 				);
 
 				$this->session->set_userdata($data_session);
-
-				$return_data  = array(
-					'conectado' => 1,
-					'tipo'	=> 2, 
-					'error' => 0, 
-					'error_tipo' => 0, 
-					'error_text' => NULL
-				);
 			}
+
+			$return_data  = array(
+				'conectado' => 1,
+				'error' => 0, 
+				'error_tipo' => 0, 
+				'error_text' => NULL
+			);
 
 			echo json_encode($return_data);
 			exit();	
@@ -117,7 +110,6 @@ class Panel extends Base_Controller {
 		}else{
 			$return_data  = array(
 				'conectado' => 0, 
-				'tipo' => 0,
 				'error' => 1, 
 				'error_tipo' => 1, 
 				'error_text' => 'Información de logueo incorrecta'

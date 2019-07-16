@@ -11,8 +11,8 @@
           			<li class="breadcrumb-item active"><a>Establecimientos</a></li>
         		</ol>
       		</div>
-			<div class="col s2 m6 l6">
-				<button type="button" id="helpBtn" class="btn waves-effect waves-light breadcrumbs-btn right" onclick="mostrar_info('modulo_carga', 'modulo_lista');"><span class="hide-on-small-onl">Nuevo</span><i class="material-icons right">add</i></button>
+			<div class="col s2 m6 l6 right-align">
+				<button type="button" class="btn waves-effect btn-small waves-light breadcrumbs-btn" onclick="mostrar_info('modulo_carga', 'modulo_lista');"><span class="hide-on-small-onl">Nuevo</span><i class="material-icons right">add</i></button>
             </div>
     	</div>
   	</div>
@@ -57,8 +57,9 @@
                     </div>
                 </div>
 	          		<div class="row">
-	            		<div class="input-field col s12">
-	              			<button class="btn cyan waves-effect waves-light right" type="submit">Crear</button>
+	            		<div class="input-field col s12 right-align">
+	              			<button type="button" class="waves-effect btn-flat" onclick="mostrar_info('modulo_carga', 'modulo_lista');">Cancelar</button> 
+	              			<button class="btn cyan waves-effect waves-light" type="submit">Crear</button> 
 	            		</div>
 	          		</div>
 			      	</form>
@@ -161,7 +162,8 @@
 				{ data: 'id', 				'visible':true, 	'orderable': false, 'searchable': false, 'render': function (val, type, row)
           			{
 	            		var opciones = '<div class="mismalinea">';
-						opciones += '<a href="establecimientos/establecimiento/'+row.codigo+'" class="waves-effect waves-light btn-small">Entrar</a> ';
+						opciones += '<a href="establecimientos/establecimiento/'+row.codigo+'" class="waves-effect waves-light btn-small">Administrar</a> ';
+						opciones += '<a href="establecimientos/editar/'+row.codigo+'" class="waves-effect waves-light btn-small cyan"><i class="material-icons">edit</i></a> ';
 	            		opciones += '</div>';
 
 			            return opciones;
