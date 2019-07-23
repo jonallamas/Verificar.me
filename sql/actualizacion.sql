@@ -35,8 +35,6 @@ CREATE TABLE IF NOT EXISTS `verifica_db`.`cuenta` (
 	PRIMARY KEY (`id`)
 )ENGINE = InnoDB;
 
-ALTER TABLE `establecimiento` ADD `id_usuario` INT DEFAULT NULL AFTER `codigo`;
-
 -- 16/07/2019
 CREATE TABLE IF NOT EXISTS `verifica_db`.`establecimiento` (
 	`id` INT NOT NULL AUTO_INCREMENT,
@@ -54,3 +52,27 @@ CREATE TABLE IF NOT EXISTS `verifica_db`.`establecimiento` (
 )ENGINE = InnoDB;
 
 ALTER TABLE `empresa` ADD `codigo` VARCHAR(16) DEFAULT NULL AFTER `id_cuenta`;
+
+-- 22/07/2019
+ALTER TABLE `establecimiento` ADD `id_empresa` INT NOT NULL AFTER `id_cuenta`;
+
+ALTER TABLE `suscripcion` ADD `cant_empresas` INT NOT NULL AFTER `descripcion`;
+ALTER TABLE `suscripcion` ADD `cant_establecimientos` INT NOT NULL AFTER `cant_empresas`;
+ALTER TABLE `suscripcion` ADD `cant_empleados` INT NOT NULL AFTER `cant_establecimientos`;
+
+INSERT INTO `suscripcion` (`id`, `nombre`, `descripcion`, `cant_empresas`, `cant_establecimientos`, `cant_empleados`, `precio`, `estado`) VALUES
+(1, 'Básico', 'Esta es una pequeña descripción provisional', 1, 1, 3, '9.99', 1),
+(2, 'Pro', 'Esta es una pequeña descripción provisional', 2, 3, 5, '24.99', 1),
+(3, 'Ultra', 'Esta es una pequeña descripción provisional', 3, 5, 10, '49.99', 1);
+
+CREATE TABLE IF NOT EXISTS `verifica_db`.`establecimiento_usuarios` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`id_cuenta` INT NOT NULL,
+	`id_establecimiento` INT NOT NULL,
+	`id_usuario` INT NOT NULL,
+	`tipo` INT DEFAULT NULL,
+	`estado` INT DEFAULT NULL,
+	`creado` DATETIME DEFAULT NULL,
+	`actualizado` DATETIME DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)ENGINE = InnoDB;

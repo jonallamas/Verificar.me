@@ -17,3 +17,23 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 	background-color: #fff !important;
 	color: #333 !important;
 }
+
+.white-text a{
+	text-decoration: none !important;
+	color: #fff;
+	border-bottom: 1px solid rgba(255,255,255,.7);
+}
+
+.modal .modal-footer{
+	height: inherit;
+	padding: 10px 15px;
+	padding-top: 0px;
+}
+
+.card-alert-suscripcion{
+	padding: 15px 0px;
+}
+
+table.dataTable.no-footer{
+	    border-bottom: 1px solid #cfd8dc;
+}

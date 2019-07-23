@@ -6,6 +6,12 @@ class Base_Controller extends CI_Controller {
 	public function __construct()
 	{
     	parent::__construct();
+
+    	//Carga de Modelo
+    	$this->load->model('cuentas_model');
+
+    	// Datos de la cuenta - Limitaciones
+		$this->data_header['cuenta'] = $this->cuentas_model->obtener_cuenta_limitaciones($this->session->userdata('cuenta_id'));
 	}
 
 	public function generateRandomString($length, $id)

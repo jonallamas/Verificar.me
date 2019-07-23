@@ -1,5 +1,5 @@
 <?php
-class Establecimientos_model extends CI_Model {
+class Empresas_model extends CI_Model {
 
     private $tabla;
 

@@ -9,12 +9,10 @@
         </li>
 
 
-              <li class="active"><a class="collapsible-body <?php if($seccion == 'principal'){ echo 'active'; } ?>" href="<?php echo base_url(); ?>panel" data-i18n=""><i class="material-icons">home</i><span>Inicio</span></a>
-              </li>
-              <li><a class="collapsible-body <?php if($seccion == 'establecimientos'){ echo 'active'; } ?>" href="<?php echo base_url(); ?>establecimientos" data-i18n=""><i class="material-icons">business</i><span>Establecimientos</span></a>
-              </li>
-              <li><a class="collapsible-body" href="<?php echo base_url(); ?>empleados" data-i18n=""><i class="material-icons">assignment_ind</i><span>Empleados</span></a>
-              </li>
+              <li class="active"><a class="<?php if($seccion == 'principal'){ echo 'active'; } ?>" href="<?php echo base_url(); ?>panel" data-i18n=""><i class="material-icons">home</i><span>Inicio</span></a></li>
+              <li><a class="<?php if($seccion == 'empresas'){ echo 'active'; } ?>" href="<?php echo base_url(); ?>empresas"><i class="material-icons">business_center</i><span>Empresas</span></a></li>
+              <li><a class="<?php if($seccion == 'establecimientos'){ echo 'active'; } ?>" href="<?php echo base_url(); ?>establecimientos"><i class="material-icons">business</i><span>Establecimientos</span></a></li>
+              <li><a class="<?php if($seccion == 'empleados'){ echo 'active'; } ?>" href="<?php echo base_url(); ?>empleados"><i class="material-icons">assignment_ind</i><span>Empleados</span></a></li>
 
 
         </li>

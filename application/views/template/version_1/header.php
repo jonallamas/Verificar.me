@@ -17,51 +17,52 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/fonts/fontawesome/css/all.css">
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/vendors.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/animate-css/animate.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist.min.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-tooltip.css">
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/animate-css/animate.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist.min.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-tooltip.css"> -->
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/theme/materialize.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/theme/style.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/dashboard-modern.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/intro.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/pricing.css">
-
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/custom/custom.css">
-
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/theme/modification.css">
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/dashboard-modern.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/intro.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/pricing.css"> -->
 
     <script src="<?php echo base_url(); ?>assets/css/js/vendors.min.js" type="text/javascript"></script>
 
-    <script src="<?php echo base_url(); ?>assets/css/vendors/chartjs/chart.min.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist.min.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-tooltip.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-fill-donut.min.js" type="text/javascript"></script>
+    <!-- <script src="<?php echo base_url(); ?>assets/css/vendors/chartjs/chart.min.js" type="text/javascript"></script> -->
+    <!-- <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist.min.js" type="text/javascript"></script> -->
+    <!-- <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-tooltip.js" type="text/javascript"></script> -->
+    <!-- <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-fill-donut.min.js" type="text/javascript"></script> -->
 
     <script src="<?php echo base_url(); ?>assets/css/js/plugins.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/css/js/custom/custom-script.js" type="text/javascript"></script>
 
-    <script src="<?php echo base_url(); ?>assets/css/js/scripts/dashboard-modern.js" type="text/javascript"></script>
+    <!-- <script src="<?php echo base_url(); ?>assets/css/js/scripts/dashboard-modern.js" type="text/javascript"></script> -->
     <script src="<?php echo base_url(); ?>assets/css/js/scripts/intro.js" type="text/javascript"></script>
-
     <script src="<?php echo base_url(); ?>assets/js/script.js" type="text/javascript"></script>
 
     <!-- Datatables -->
-    <script type="text/javascript" src="<?php echo base_url(); ?>scripts/script_tablas/jquery.dataTables.js"></script>
-    <script type="text/javascript" src="<?php echo base_url(); ?>scripts/script_tablas/dataTables.bootstrap.min.js"></script>
-    <link href="<?php echo base_url(); ?>scripts/script_tablas/dataTables.bootstrap.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/data-tables/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/data-tables.css">
+    <script src="<?php echo base_url(); ?>assets/css/vendors/data-tables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/css/vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js" type="text/javascript"></script>
 
-    <!-- Typeahead -->
-    <link href="<?php echo base_url(); ?>scripts/script_typeahead/typeahead.css" rel="stylesheet">
-    <script src="<?php echo base_url(); ?>scripts/script_typeahead/typeahead.bundle.js"></script>
-
-    <!-- PNotify -->
-    <script src="<?php echo base_url(); ?>scripts/script_pnotify/pnotify.custom.min.js?v=2.1"></script>
-    <script src="<?php echo base_url(); ?>scripts/script_pnotify/pnotify.conf.min.js?v=2.1"></script>
-    <link href="<?php echo base_url(); ?>scripts/script_pnotify/pnotify.custom.min.css?v=2.1" rel="stylesheet">
-    
+    <!-- Modificaciones CSS -->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/custom/custom.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/theme/modification.css">
   </head>
-  <body class="vertical-layout vertical-menu-collapsible page-header-dark vertical-modern-menu 2-columns  " data-open="click" data-menu="vertical-modern-menu" data-col="2-columns">
+  <body>
+    <div id="modalActionGeneral" class="modal">
+        <div class="modal-content center-align">
+            <h6 id="modalActionGeneral_texto">¿Está seguro de querer eliminar la siguiente empresa?</h6>
+            <h5 id="modalActionGeneral_data">A bunch of text</h5>
+        </div>
+        <div class="modal-footer right-align">
+            <button type="button" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</button>
+            <button type="button" id="modalActionGeneral_btn" class="modal-action btn waves-effect waves-light">Eliminar</button>
+        </div>
+    </div>
 
     <header class="page-topbar" id="header">
       <div class="navbar navbar-fixed">

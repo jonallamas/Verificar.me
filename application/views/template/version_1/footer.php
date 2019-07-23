@@ -167,6 +167,8 @@
             </div>
         </div>
     </div>
-
+    <script>
+        alerta_abm(<?php echo $alerta; ?>);
+    </script>
   </body>
 </html>
