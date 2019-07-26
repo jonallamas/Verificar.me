@@ -101,36 +101,9 @@
 			}
 		});
 
-		// Tabla lista de usuarios del sistema
-		$('.tabla_usuarios #page-length-option').DataTable({
-			"autoWidth": false,
-			"language": {
-				"url": base_url+"scripts/script_tablas/spanish.json"
-			},
-			serverSide: true,
-			columns: [
-				{ data: 'id',				'visible':false, 	'orderable': true, 	'searchable': false },
-				// { data: 'icono', 			'visible':true, 	'orderable': false, 'searchable': false },
-				{ data: 'nombre_completo',		'visible':true, 	'orderable': true, 	'searchable': true },		
-		        { data: 'correo',   'visible':false,   'orderable': false,  'searchable': true },	
-				{ data: 'id', 				'visible':true, 	'orderable': false, 'searchable': false, 'render': function (val, type, row)
-          			{
-	            		var opciones = '<div class="mismalinea center-align">';
-						opciones += '<a href="establecimientos/editar/'+row.codigo+'" class="waves-effect waves-light btn-small cyan"><i class="material-icons">add</i></a> ';
-	            		opciones += '</div>';
+		
 
-			            return opciones;
-			    	}
-			    }
-			],
-			order: [
-				[ 0, 'desc' ],
-			],
-			ajax: {
-				url: base_url+'establecimientos/lista_usuarios',
-				type: 'POST'
-			}
-		});
+		
 	});
 
 </script>

@@ -59,7 +59,7 @@
             <h5 id="modalActionGeneral_data">A bunch of text</h5>
         </div>
         <div class="modal-footer right-align">
-            <button type="button" class="modal-action modal-close waves-effect waves-green btn-flat">Cancelar</button>
+            <button type="button" class="modal-action modal-close waves-effect btn-flat">Cancelar</button>
             <button type="button" id="modalActionGeneral_btn" class="modal-action btn waves-effect waves-light">Eliminar</button>
         </div>
     </div>

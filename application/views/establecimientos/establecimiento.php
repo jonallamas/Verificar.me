@@ -86,3 +86,83 @@
 </div>
 
 <?php echo $js_establecimientos; ?>
+
+<script>
+	$(document).ready(function(){
+		// Tabla lista de usuarios del sistema
+		var tabla_usuarios = $('.tabla_usuarios #page-length-option').DataTable({
+			"autoWidth": false,
+			"language": {
+				"url": base_url+"scripts/script_tablas/spanish.json"
+			},
+			serverSide: true,
+			columns: [
+				{ data: 'id',				'visible':false, 	'orderable': true, 	'searchable': false },
+				// { data: 'icono', 			'visible':true, 	'orderable': false, 'searchable': false },
+				{ data: 'nombre_completo',		'visible':true, 	'orderable': true, 	'searchable': true },		
+		        { data: 'correo',   'visible':false,   'orderable': false,  'searchable': true },	
+				{ data: 'id', 				'visible':true, 	'orderable': false, 'searchable': false, 'render': function (val, type, row)
+          			{
+	            		var opciones = '<div class="mismalinea center-align">';
+						opciones += '<button type="button" class="waves-effect waves-light btn-small cyan btnAgregarEmpleado" data-nombre="'+row.nombre_completo+'" data-id="'+row.id+'"><i class="material-icons">add</i></button> ';
+	            		opciones += '</div>';
+
+			            return opciones;
+			    	}
+			    }
+			],
+			order: [
+				[ 0, 'desc' ],
+			],
+			ajax: {
+				url: base_url+'establecimientos/lista_usuarios',
+				type: 'POST'
+			}
+		});
+
+		var tabla_empleados = $('.tabla_empleados #page-length-option').DataTable({
+			"autoWidth": false,
+			"language": {
+				"url": base_url+"scripts/script_tablas/spanish.json"
+			},
+			serverSide: true,
+			columns: [
+				{ data: 'id',				'visible':false, 	'orderable': true, 	'searchable': false },
+				// { data: 'icono', 			'visible':true, 	'orderable': false, 'searchable': false },
+				{ data: 'nombre_completo',		'visible':true, 	'orderable': true, 	'searchable': true },		
+		        // { data: 'correo',   'visible':false,   'orderable': false,  'searchable': true },	
+				{ data: 'id', 				'visible':true, 	'orderable': false, 'searchable': false, 'render': function (val, type, row)
+          			{
+	            		var opciones = '<div class="mismalinea center-align">';
+						opciones += '<button type="button" class="waves-effect waves-light btn-small cyan btnEliminar	Empleado"><i class="material-icons">add</i></button> ';
+	            		opciones += '</div>';
+
+			            return opciones;
+			    	}
+			    }
+			],
+			order: [
+				[ 0, 'desc' ],
+			],
+			ajax: {
+				url: base_url+'establecimientos/lista_empleados',
+				type: 'POST'
+			}
+		});
+
+		$('.tabla_usuarios #page-length-option').delegate('.btnAgregarEmpleado', 'click', function(e){
+			e.preventDefault();
+			let usuario_id = $(this).data('id');
+			let usuario_nombre = $(this).data('nombre');
+			console.log($(this).parents('tr'));
+		    // var row = tabla_usuarios.row( $(this).parents('tr') );
+		    // var rowNode = row.node();
+		    // row.remove();
+		 
+		    tabla_empleados
+		        .row.add( rowNode )
+		        .draw();
+			console.log('Agregar empleado');
+		});
+	});
+</script>

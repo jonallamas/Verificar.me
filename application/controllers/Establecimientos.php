@@ -281,16 +281,17 @@ class Establecimientos extends Base_Controller {
 	public function lista_empleados(){
 		$cuenta_id = $this->session->userdata('cuenta_id');
 
-		$this->datatables->select('usuarios.id as id,
-			usuarios.creado as creado,
+		$this->datatables->select('establecimiento_usuarios.id as id,
+			establecimiento_usuarios.creado as creado,
 			CONCAT(usuarios.apellido, " ", usuarios.nombre) as nombre_completo,
 			usuarios.correo as correo,
 
-			DATE_FORMAT(usuarios.creado, "%d/%m/%Y") as fecha_registro_formateado,
-			usuarios.estado as estado');
-		$this->datatables->from('usuarios');
-		$this->datatables->where('usuarios.tipo', 2);
-		$this->datatables->where('usuarios.estado !=', 0);
+			DATE_FORMAT(establecimiento_usuarios.creado, "%d/%m/%Y") as fecha_registro_formateado,
+			establecimiento_usuarios.estado as estado');
+		$this->datatables->from('establecimiento_usuarios');
+		$this->datatables->join('usuarios', 'usuarios.id = establecimiento_usuarios.id_usuario');
+		$this->datatables->where('establecimiento_usuarios.tipo', 2);
+		$this->datatables->where('establecimiento_usuarios.estado !=', 0);
 
   		echo $this->datatables->generate();
 	}	

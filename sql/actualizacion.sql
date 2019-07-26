@@ -76,3 +76,6 @@ CREATE TABLE IF NOT EXISTS `verifica_db`.`establecimiento_usuarios` (
 	`actualizado` DATETIME DEFAULT NULL,
 	PRIMARY KEY (`id`)
 )ENGINE = InnoDB;
+
+-- 24/07/2019
+ALTER TABLE `usuarios` ADD `dni` VARCHAR(16) NOT NULL AFTER `telefono`;
