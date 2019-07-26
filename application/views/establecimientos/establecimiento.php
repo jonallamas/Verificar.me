@@ -40,7 +40,7 @@
 							<div class="row">
 								<div class="col s12"></div>
 								<div class="col s12 tabla_usuarios">
-									<table class="display" id="page-length-option">
+									<table class="responsive-table" id="page-length-option">
 										<thead>
 											<tr>
 												<th>id</th>
@@ -158,10 +158,11 @@
 		    // var row = tabla_usuarios.row( $(this).parents('tr') );
 		    // var rowNode = row.node();
 		    // row.remove();
-		 
-		    tabla_empleados
-		        .row.add( rowNode )
-		        .draw();
+		    tabla_empleados.row.add({
+		        	"id":       		 usuario_id,
+			        "nombre_completo":   usuario_nombre,
+			        "id":     			 "Hola"
+		        }).draw().node();
 			console.log('Agregar empleado');
 		});
 	});

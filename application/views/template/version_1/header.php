@@ -45,7 +45,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/data-tables/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/data-tables/extensions/responsive/css/responsive.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/data-tables.css">
-    <script src="<?php echo base_url(); ?>assets/css/vendors/data-tables/js/jquery.dataTables.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>assets/css/vendors/data-tables/js/jquery.dataTables.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/css/vendors/data-tables/extensions/responsive/js/dataTables.responsive.min.js" type="text/javascript"></script>
 
     <!-- Modificaciones CSS -->
@@ -55,8 +55,8 @@
   <body>
     <div id="modalActionGeneral" class="modal">
         <div class="modal-content center-align">
-            <h6 id="modalActionGeneral_texto">¿Está seguro de querer eliminar la siguiente empresa?</h6>
-            <h5 id="modalActionGeneral_data">A bunch of text</h5>
+            <h6 id="modalActionGeneral_texto"></h6>
+            <h5 id="modalActionGeneral_data"></h5>
         </div>
         <div class="modal-footer right-align">
             <button type="button" class="modal-action modal-close waves-effect btn-flat">Cancelar</button>
