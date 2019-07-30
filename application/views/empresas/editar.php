@@ -44,7 +44,7 @@
 	            		<div class="input-field col s12 right-align">
 	            			<input type="hidden" id="f_empresa_codigo" name="f_empresa_codigo" value="<?php echo $empresa->codigo; ?>">
 	            			<a href="<?php echo base_url(); ?>empresas" class="waves-effect btn-flat">Cancelar</a>
-	              			<button class="btn cyan waves-effect waves-light" type="submit">Modificar</button>
+	              			<button class="btn waves-effect waves-light" type="submit">Modificar</button>
 	            		</div>
 	          		</div>
 			      	</form>

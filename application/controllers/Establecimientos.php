@@ -45,8 +45,7 @@ class Establecimientos extends Base_Controller {
 		$this->data_header['js_establecimientos']	= $this->load->view('establecimientos/js_establecimientos', $this->data_header, true);
 
 		$this->data_header['establecimiento'] = $this->establecimientos_model->obtener($codigo);
-		// $this->data_header['provincias'] = $this->establecimientos_model->obtener_provincias();
-		// $this->data_header['poblaciones'] = $this->establecimientos_model->obtener_poblaciones_id($this->data_header['establecimiento']->id_provincia);
+		$this->data_header['empleados'] = $this->establecimientos_model->obtener_empleados($this->data_header['establecimiento']->id);
 
 		if($this->data_header['establecimiento'])
 		{
@@ -85,6 +84,70 @@ class Establecimientos extends Base_Controller {
 		$provincia_id = $this->input->post('provincia_id');
 		$poblaciones = $this->establecimientos_model->obtener_poblaciones_id($provincia_id);
     	echo json_encode($poblaciones);
+	}
+
+	public function agregar_empleado()
+	{
+		$usuario_id = $this->input->post('f_usuario_id');
+		$establecimiento_id = $this->input->post('f_establecimiento_id');
+
+		$existe_empleado = $this->establecimientos_model->buscar_empleado_establecimiento($usuario_id, $establecimiento_id, $this->session->userdata('cuenta_id'));
+
+		if($existe_empleado){
+			$respuesta = array(
+				'error' => 1,
+				'empleado_id' => $existe_empleado->id
+			);
+		}else{
+			// Empleado tipo
+			// 1- Moderador/Supervisor
+			// 2- Empleado normal
+			$datos_empleado = array(
+				'id_cuenta'		=> $this->session->userdata('cuenta_id'),
+
+				'id_establecimiento'	=> $establecimiento_id,
+				'id_usuario'			=> $usuario_id,
+				'tipo'					=> 2,
+				
+				'estado'		=> 1,
+				'creado'		=> date('Y-m-d H:i:s'),
+				'actualizado'	=> date('Y-m-d H:i:s')
+			);
+
+			if($this->establecimientos_model->alta_empleado($datos_empleado)){
+				$empleado_id = $this->db->insert_id();
+
+				// Historial tipo
+				// 0- Empleado eliminado
+				// 1- Empleado agregado
+				// 2- Empleado suspendido
+				$datos_historial = array(
+					'id_cuenta'		=> $this->session->userdata('cuenta_id'),
+
+					'id_establecimiento'	=> $establecimiento_id,
+					'id_usuario'			=> $usuario_id,
+					'tipo'					=> 1,
+					
+					'estado'		=> 1,
+					'creado'		=> date('Y-m-d H:i:s'),
+					'actualizado'	=> date('Y-m-d H:i:s')
+				);
+
+				$this->establecimientos_model->alta_empleado_historial($datos_historial);
+
+				$respuesta = array(
+					'error' => 0,
+					'empleado_id' => $empleado_id
+				);
+			}else{
+				$respuesta = array(
+					'error' => 2,
+					'empleado_id' => NULL
+				);
+			}
+		}
+
+    	echo json_encode($respuesta);
 	}
 
 	public function guardar()
@@ -261,38 +324,38 @@ class Establecimientos extends Base_Controller {
   		echo $this->datatables->generate();
 	}
 
-	public function lista_usuarios(){
-		$cuenta_id = $this->session->userdata('cuenta_id');
+	// public function lista_usuarios(){
+	// 	$cuenta_id = $this->session->userdata('cuenta_id');
 
-		$this->datatables->select('usuarios.id as id,
-			usuarios.creado as creado,
-			CONCAT(usuarios.apellido, " ", usuarios.nombre) as nombre_completo,
-			usuarios.correo as correo,
+	// 	$this->datatables->select('usuarios.id as id,
+	// 		usuarios.creado as creado,
+	// 		CONCAT(usuarios.apellido, " ", usuarios.nombre) as nombre_completo,
+	// 		usuarios.correo as correo,
 
-			DATE_FORMAT(usuarios.creado, "%d/%m/%Y") as fecha_registro_formateado,
-			usuarios.estado as estado');
-		$this->datatables->from('usuarios');
-		$this->datatables->where('usuarios.tipo', 2);
-		$this->datatables->where('usuarios.estado !=', 0);
+	// 		DATE_FORMAT(usuarios.creado, "%d/%m/%Y") as fecha_registro_formateado,
+	// 		usuarios.estado as estado');
+	// 	$this->datatables->from('usuarios');
+	// 	$this->datatables->where('usuarios.tipo', 2);
+	// 	$this->datatables->where('usuarios.estado !=', 0);
 
-  		echo $this->datatables->generate();
-	}
+ //  		echo $this->datatables->generate();
+	// }
 
-	public function lista_empleados(){
-		$cuenta_id = $this->session->userdata('cuenta_id');
+	// public function lista_empleados(){
+	// 	$cuenta_id = $this->session->userdata('cuenta_id');
 
-		$this->datatables->select('establecimiento_usuarios.id as id,
-			establecimiento_usuarios.creado as creado,
-			CONCAT(usuarios.apellido, " ", usuarios.nombre) as nombre_completo,
-			usuarios.correo as correo,
+	// 	$this->datatables->select('establecimiento_usuarios.id as id,
+	// 		establecimiento_usuarios.creado as creado,
+	// 		CONCAT(usuarios.apellido, " ", usuarios.nombre) as nombre_completo,
+	// 		usuarios.correo as correo,
 
-			DATE_FORMAT(establecimiento_usuarios.creado, "%d/%m/%Y") as fecha_registro_formateado,
-			establecimiento_usuarios.estado as estado');
-		$this->datatables->from('establecimiento_usuarios');
-		$this->datatables->join('usuarios', 'usuarios.id = establecimiento_usuarios.id_usuario');
-		$this->datatables->where('establecimiento_usuarios.tipo', 2);
-		$this->datatables->where('establecimiento_usuarios.estado !=', 0);
+	// 		DATE_FORMAT(establecimiento_usuarios.creado, "%d/%m/%Y") as fecha_registro_formateado,
+	// 		establecimiento_usuarios.estado as estado');
+	// 	$this->datatables->from('establecimiento_usuarios');
+	// 	$this->datatables->join('usuarios', 'usuarios.id = establecimiento_usuarios.id_usuario');
+	// 	$this->datatables->where('establecimiento_usuarios.tipo', 2);
+	// 	$this->datatables->where('establecimiento_usuarios.estado !=', 0);
 
-  		echo $this->datatables->generate();
-	}	
+ //  		echo $this->datatables->generate();
+	// }	
 }

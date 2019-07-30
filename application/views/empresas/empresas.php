@@ -45,7 +45,7 @@
 		          		<div class="row">
 		            		<div class="input-field col s12 right-align">
 		              			<button type="button" class="waves-effect btn-flat" onclick="mostrar_info('modulo_carga', 'modulo_lista');">Cancelar</button> 
-		              			<button class="btn cyan waves-effect waves-light" type="submit">Crear</button> 
+		              			<button class="btn waves-effect waves-light" type="submit">Crear</button> 
 		            		</div>
 		          		</div>
 			      	</form>

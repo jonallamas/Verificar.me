@@ -31,6 +31,16 @@ class Usuario_model extends CI_Model {
         return $query->row();
     }
 
+    public function obtener_x_dni($dni)
+    {
+        $this->db->select('usuarios.*,
+            CONCAT(usuarios.apellido, " ", usuarios.nombre) as nombre_completo');
+        $this->db->from('usuarios');
+        $this->db->where('usuarios.dni', $dni);
+        $query = $this->db->get();
+        return $query->row();
+    }
+
     public function obtener_cuenta($id)
     {
         $this->db->select('cuenta.*');

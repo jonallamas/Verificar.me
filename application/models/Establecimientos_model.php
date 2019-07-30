@@ -13,6 +13,16 @@ class Establecimientos_model extends CI_Model {
         return $this->db->insert('establecimiento', $data);
     }
 
+    public function alta_empleado($data)
+    {
+        return $this->db->insert('establecimiento_usuarios', $data);
+    }
+
+    public function alta_empleado_historial($data)
+    {
+        return $this->db->insert('establecimiento_usuarios_historial', $data);
+    }
+
     public function modifica_x_codigo($data, $codigo)
     {
         $this->db->where('establecimiento.codigo', $codigo);
@@ -29,10 +39,51 @@ class Establecimientos_model extends CI_Model {
 
     public function obtener($codigo)
     {
-        $this->db->select('establecimiento.*,
+        $this->db->select('establecimiento.id as id,
+            establecimiento.nombre as nombre,
+            establecimiento.direccion as direccion,
+            
+            provincia.provincia as provincia_nombre,
+            poblacion.poblacion as poblacion_nombre,
+
+            empresa.nombre as empresa_nombre,
             DATE_FORMAT(establecimiento.fecha_registro, "%d/%m/%Y") as fecha_registro_formateado');
         $this->db->from('establecimiento');
+        $this->db->join('provincia', 'provincia.provinciaid = establecimiento.id_provincia');
+        $this->db->join('poblacion', 'poblacion.poblacionid = establecimiento.id_ciudad', 'left');
+        $this->db->join('empresa', 'empresa.id = establecimiento.id_empresa');
+        $this->db->where('provincia.provinciaid = poblacion.provinciaid');
         $this->db->where('establecimiento.codigo', $codigo);
+
+        $query = $this->db->get();
+        return $query->row();
+    }
+
+    public function obtener_empleados($id)
+    {
+        $this->db->select('establecimiento_usuarios.id as id,
+            establecimiento_usuarios.tipo as tipo,
+            establecimiento_usuarios.estado as estado,
+
+            CONCAT(usuarios.apellido, " ", usuarios.nombre) as usuario_nombre_completo,
+            usuarios.dni as usuario_dni');
+        $this->db->from('establecimiento_usuarios');
+        $this->db->join('usuarios', 'usuarios.id = establecimiento_usuarios.id_usuario');
+        // $this->db->join('establecimiento', 'establecimiento.id = establecimiento_usuarios.id_establecimiento');
+        $this->db->where('establecimiento_usuarios.id_establecimiento', $id);
+        $this->db->where('establecimiento_usuarios.estado !=', 0);
+
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function buscar_empleado_establecimiento($usuario_id, $establecimiento_id, $cuenta_id)
+    {
+        $this->db->select('establecimiento_usuarios.id');
+        $this->db->from('establecimiento_usuarios');
+        $this->db->where('establecimiento_usuarios.id_cuenta', $cuenta_id);
+        $this->db->where('establecimiento_usuarios.id_establecimiento', $establecimiento_id);
+        $this->db->where('establecimiento_usuarios.id_usuario', $usuario_id);
 
         $query = $this->db->get();
         return $query->row();

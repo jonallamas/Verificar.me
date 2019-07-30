@@ -68,12 +68,12 @@
 				// { data: 'icono', 			'visible':true, 	'orderable': false, 'searchable': false },
 				{ data: 'nombre',		'visible':true, 	'orderable': true, 	'searchable': true },		
 		        { data: 'empresa_nombre',   'visible':true,   'orderable': true,  'searchable': true },	
-		        { data: 'provincia_nombre',   'visible':true,   'orderable': true,  'searchable': true },   
 		        { data: 'poblacion_nombre',   'visible':true,   'orderable': true,  'searchable': true, 'render': function(val, type, row) 
 		        	{
 		        		return '<span class="mismalinea">'+row.poblacion_nombre+'</span>';
 		        	}
 		    	},   	
+		        { data: 'provincia_nombre',   'visible':true,   'orderable': true,  'searchable': true },   
 				{ data: 'id', 				'visible':true, 	'orderable': false, 'searchable': false, 'render': function (val, type, row)
           			{
 	            		var opciones = '<div class="mismalinea center-align">';

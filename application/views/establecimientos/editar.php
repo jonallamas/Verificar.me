@@ -64,7 +64,7 @@
 	            		<div class="input-field col s12 right-align">
 	            			<input type="hidden" id="f_establecimiento_id" name="f_establecimiento_id" value="<?php echo $establecimiento->codigo; ?>">
 	            			<a href="<?php echo base_url(); ?>establecimientos" class="waves-effect btn-flat">Cancelar</a>
-	              			<button class="btn cyan waves-effect waves-light" type="submit">Modificar</button>
+	              			<button class="btn waves-effect waves-light" type="submit">Modificar</button>
 	            		</div>
 	          		</div>
 			      	</form>
