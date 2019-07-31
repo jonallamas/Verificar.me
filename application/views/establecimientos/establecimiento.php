@@ -58,7 +58,7 @@
 					</div>
 					<div class="card-alert card gradient-45deg-amber-amber">
 						<div class="card-content white-text">
-							<p>Recuerde que se guardará un historial del momento en que ingresa y elimina un empleado dentro del establecimiento.</p>
+							<p>Recuerde que se guardará un historial de cada acción que se le realice a cada empleado dentro del establecimiento.</p>
 						</div>
 					</div>
 				</div>
@@ -93,17 +93,18 @@
 											</tr>
 										</thead>
 										<tbody>
-											<tr id="trSinDatos" class="scale-transition <?php if(count($empleados) > 0){ echo 'scale-out';} ?>" style="<?php if(count($empleados) > 0){ echo 'display: none;';} ?>">
+											<?php if(count($empleados) == 0){ ?>
+											<tr>
 												<th colspan="3" class="center-align">No posee ningún empleado agregado.</th>
 											</tr>
-											<?php if(count($empleados) > 0){ ?>
+											<?php }else{ ?>
 												<?php foreach ($empleados as $empleado) { ?>
-													<tr id="fila_empleado_<?php echo $empleado->id; ?>">
+													<tr>
 														<th><?php echo $empleado->usuario_nombre_completo; ?></th>
 														<th width="1%"><?php echo $empleado->usuario_dni; ?></th>
 														<th width="1%" class="center-align mismalinea">
 															<?php if($empleado->estado == 1){ ?>
-																<button type="button" onclick="eliminar_empleado('<?php echo $empleado->id; ?>', '<?php echo $empleado->usuario_nombre_completo; ?>')" class="waves-effect waves-light btn-small orange darken-4"><i class="material-icons">block</i></button>
+																<button type="button" onclick="suspender_empleado('<?php echo $empleado->id; ?>', '<?php echo $empleado->usuario_nombre_completo; ?>')" class="waves-effect waves-light btn-small orange darken-4"><i class="material-icons">block</i></button>
 															<?php }else{ ?>
 																<button type="button" onclick="activar_empleado('<?php echo $empleado->id; ?>', '<?php echo $empleado->usuario_nombre_completo; ?>')" class="waves-effect waves-light btn-small blue darken-4"><i class="material-icons">cached</i></button>
 															<?php } ?>
@@ -171,93 +172,4 @@
     </div>
 </div>
 
-<script>
-	function eliminar_empleado(codigo, data){
-		var ruta = 'empresas/eliminar';
-		var texto_superior = '¿Está seguro de querer eliminar la siguiente empresa?';
-		var btn_nombre = 'Eliminar';
-		var btn_color = 'rojo';
-		modal_action_general(codigo, data, ruta, texto_superior, btn_nombre, btn_color); 
-	}
-
-	$('#btnBuscarUsuario').on('click', function(e){
-		e.preventDefault();
-		$(this).prop('disabled', true);
-		let dni = $('#f_buscador_dni').val();
-		if(dni){
-			$.ajax({
-				type: 'POST',
-				data: {
-					'f_dni': dni
-				},
-				url: base_url+'usuarios/buscar_usuario_x_dni',
-				success: function(data){
-					let datos_usuario = jQuery.parseJSON(data);
-					if(datos_usuario){
-						$('#f_buscador_dni').val('');
-						$('#btnBuscarUsuario').prop('disabled', false);
-						$('#modalBuscador-nombre').html(datos_usuario.nombre_completo);
-						$('#modalBuscador-dni').html(datos_usuario.dni);
-						$('#modalBuscador-correo').html(datos_usuario.correo);
-						$('#modalBuscador-id').val(datos_usuario.id);
-						// console.log(datos_usuario);
-						$('#modalBuscador').modal('open');
-					}else{
-						$('#btnBuscarUsuario').prop('disabled', false);
-						M.toast({html: 'No se ha encontrado ningún usuario con ese DNI'});
-					}
-				}
-			});
-		}else{
-			$('#btnBuscarUsuario').prop('disabled', false);
-			M.toast({html: 'Por favor, ingrese un DNI válido'});
-		}
-	});
-
-	$('#btnAgregarEmpleado').on('click', function(e){
-		e.preventDefault();
-		let nombre = $('#modalBuscador-nombre').html();
-		let dni = $('#modalBuscador-dni').html();
-		let id = $('#modalBuscador-id').val();
-
-		$.ajax({
-			type: 'POST',
-			data: {
-				'f_usuario_id': id,
-				'f_establecimiento_id': <?php echo $establecimiento->id; ?>
-			},
-			url: base_url+'establecimientos/agregar_empleado',
-			success: function(data){
-				data = jQuery.parseJSON(data);
-				console.log(data);
-				if(data.error == 0){
-					if($('#trSinDatos').hasClass('scale-out')){
-						$('#tabla_empleados tbody').append(`<tr id="fila_empleado_${data.empleado_id}">
-																<th>${nombre}</th>
-																<th width="1%">${dni}</th>
-																<th width="1%" class="center-align"><button type="button" onclick="eliminar_empleado('${data.empleado_id}', '${nombre}')" class="waves-effect waves-light red darken-4 btn-small"><i class="material-icons">delete</i></button></th>
-															</tr>`);
-					}else{
-						$('#trSinDatos').addClass('scale-out').css('display', 'none');
-						$('#tabla_empleados tbody').append(`<tr id="fila_empleado_${data.empleado_id}">
-															<th>${nombre}</th>
-															<th width="1%">${dni}</th>
-															<th width="1%" class="center-align"><button type="button" onclick="eliminar_empleado('${data.empleado_id}', '${nombre}')" class="waves-effect waves-light red darken-4 btn-small"><i class="material-icons">delete</i></button></th>
-														</tr>`);
-							
-					}
-					$('#modalBuscador').modal('close');
-					M.toast({html: 'Empleado agregado con éxito'});
-				}else if(data.error == 1){
-					$('#modalBuscador').modal('close');
-					M.toast({html: 'El usuario que intenta agregar ya existe como empleado'});
-				}else{
-					$('#modalBuscador').modal('close');
-					M.toast({html: 'No se ha podido agregar el empleado'});
-				}
-			}
-		});
-
-		// let count_empleados = $('#tabla_empleados tbody tr').length;
-	});
-</script>
+<?php echo $js_establecimiento; ?>

@@ -29,4 +29,13 @@ class Usuarios extends Base_Controller {
 	{
 		redirect(base_url().'panel');
 	}
+
+	public function buscar_usuario_x_dni()
+	{
+		$dni = $this->input->post('f_dni');
+
+		$datos_usuario = $this->usuario_model->obtener_x_dni($dni);
+ 
+		echo json_encode($datos_usuario);
+	}
 }

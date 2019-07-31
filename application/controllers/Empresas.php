@@ -27,7 +27,7 @@ class Empresas extends Base_Controller {
 
 	public function index()
 	{
-		$this->data_header['js_empresas']	= $this->load->view('empresas/js_empresas', $this->data_header, true);
+		$this->data_header['js_empresas']	= $this->load->view('empresas/_js/js_empresas', $this->data_header, true);
 
 		$this->load->view('template/version_1/header', $this->data_header);
 		$this->load->view('empresas/empresas');

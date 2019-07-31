@@ -79,3 +79,17 @@ CREATE TABLE IF NOT EXISTS `verifica_db`.`establecimiento_usuarios` (
 
 -- 24/07/2019
 ALTER TABLE `usuarios` ADD `dni` VARCHAR(16) NOT NULL AFTER `telefono`;
+
+-- 29/07/2019
+CREATE TABLE IF NOT EXISTS `verifica_db`.`establecimiento_usuarios_historial` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`id_cuenta` INT NOT NULL,
+	`id_empleado` INT NOT NULL,
+	`id_establecimiento` INT NOT NULL,
+	`id_usuario` INT NOT NULL,
+	`tipo` INT DEFAULT NULL,
+	`estado` INT DEFAULT NULL,
+	`creado` DATETIME DEFAULT NULL,
+	`actualizado` DATETIME DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)ENGINE = InnoDB;

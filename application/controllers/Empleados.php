@@ -8,6 +8,7 @@ class Empleados extends Base_Controller {
 
 		// Carga de Modelo
 		$this->load->model('empleados_model');
+		$this->load->model('establecimientos_model');
 
 		// Configurando el data_header
 		$this->data_header['titulo'] = 'Empleados';
@@ -30,12 +31,112 @@ class Empleados extends Base_Controller {
 		redirect(base_url().'panel');
 	}
 
-	public function buscar_usuario_x_dni()
-	{
-		$dni = $this->input->post('f_dni');
+	public function eliminar(){
+		$id = $this->uri->segment(3);
 
-		$datos_usuario = $this->usuario_model->obtener_x_dni($dni);
- 
-		echo json_encode($datos_usuario);
+		$establecimiento_empleado = $this->empleados_model->obtener($id);
+		$establecimiento = $this->establecimientos_model->obtener_x_id($establecimiento_empleado->id_establecimiento);
+
+		$datos_empleado = array(
+			'estado' => 0
+		);
+
+		if($this->empleados_model->modifica_x_id($datos_empleado, $id))
+		{
+			// Historial tipo
+			// 0- Empleado eliminado
+			// 1- Empleado agregado
+			// 2- Empleado suspendido
+			$datos_historial = array(
+				'id_cuenta'		=> $this->session->userdata('cuenta_id'),
+
+				'id_establecimiento'	=> $establecimiento_empleado->id_establecimiento,
+				'id_usuario'			=> $id,
+				'tipo'					=> 0,
+				
+				'estado'		=> 1,
+				'creado'		=> date('Y-m-d H:i:s'),
+				'actualizado'	=> date('Y-m-d H:i:s')
+			);
+			$this->empleados_model->alta_historial($datos_historial);
+
+			$this->session->set_userdata(array('alerta' => 9));
+		}
+		else
+		{
+			$this->session->set_userdata(array('alerta' => 99));
+		}
+
+		redirect(base_url().'establecimientos/establecimiento/'.$establecimiento->codigo);
+	}
+
+	public function suspender(){
+		$id = $this->uri->segment(3);
+
+		$establecimiento_empleado = $this->empleados_model->obtener($id);
+		$establecimiento = $this->establecimientos_model->obtener_x_id($establecimiento_empleado->id_establecimiento);
+
+		$datos_empleado = array(
+			'estado' => 2
+		);
+
+		if($this->empleados_model->modifica_x_id($datos_empleado, $id))
+		{
+			$datos_historial = array(
+				'id_cuenta'		=> $this->session->userdata('cuenta_id'),
+
+				'id_establecimiento'	=> $establecimiento_empleado->id_establecimiento,
+				'id_usuario'			=> $id,
+				'tipo'					=> 2,
+				
+				'estado'		=> 1,
+				'creado'		=> date('Y-m-d H:i:s'),
+				'actualizado'	=> date('Y-m-d H:i:s')
+			);
+			$this->empleados_model->alta_historial($datos_historial);
+
+			$this->session->set_userdata(array('alerta' => 3));
+		}
+		else
+		{
+			$this->session->set_userdata(array('alerta' => 3));
+		}
+
+		redirect(base_url().'establecimientos/establecimiento/'.$establecimiento->codigo);
+	}
+
+	public function activar(){
+		$id = $this->uri->segment(3);
+
+		$establecimiento_empleado = $this->empleados_model->obtener($id);
+		$establecimiento = $this->establecimientos_model->obtener_x_id($establecimiento_empleado->id_establecimiento);
+
+		$datos_empleado = array(
+			'estado' 		=> 1
+		);
+
+		if($this->empleados_model->modifica_x_id($datos_empleado, $id))
+		{
+			$datos_historial = array(
+				'id_cuenta'		=> $this->session->userdata('cuenta_id'),
+
+				'id_establecimiento'	=> $establecimiento_empleado->id_establecimiento,
+				'id_usuario'			=> $id,
+				'tipo'					=> 1,
+				
+				'estado'		=> 1,
+				'creado'		=> date('Y-m-d H:i:s'),
+				'actualizado'	=> date('Y-m-d H:i:s')
+			);
+			$this->empleados_model->alta_historial($datos_historial);
+
+			$this->session->set_userdata(array('alerta' => 4));
+		}
+		else
+		{
+			$this->session->set_userdata(array('alerta' => 44));
+		}
+
+		redirect(base_url().'establecimientos/establecimiento/'.$establecimiento->codigo);
 	}
 }

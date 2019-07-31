@@ -74,4 +74,4 @@
 	</div>
 </div>
 
-<?php echo $js_establecimientos_editar; ?>
+<?php echo $js_editar; ?>

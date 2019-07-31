@@ -29,9 +29,12 @@ class Empresas_model extends CI_Model {
 
     public function obtener($codigo)
     {
+        $cuenta_id = $this->session->userdata('cuenta_id');
+
         $this->db->select('empresa.*,
             DATE_FORMAT(empresa.fecha_registro, "%d/%m/%Y") as fecha_registro_formateado');
         $this->db->from('empresa');
+        $this->db->where('empresa.id_cuenta', $cuenta_id);
         $this->db->where('empresa.codigo', $codigo);
 
         $query = $this->db->get();
@@ -40,9 +43,12 @@ class Empresas_model extends CI_Model {
 
     public function obtener_todos()
     {
+        $cuenta_id = $this->session->userdata('cuenta_id');
+
         $this->db->select('empresa.*,
             DATE_FORMAT(empresa.fecha_registro, "%d/%m/%Y") as fecha_registro_formateado');
         $this->db->from('empresa');
+        $this->db->where('empresa.id_cuenta', $cuenta_id);
         $this->db->where('empresa.estado', 1);
 
         $query = $this->db->get();
