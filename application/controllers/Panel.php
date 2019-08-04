@@ -64,8 +64,6 @@ class Panel extends Base_Controller {
 		if($validacion){
 			$cuenta = $this->usuario_model->obtener_cuenta($validacion->id);
 
-			// $data_login = array('conexion'    => date('Y-m-d H:i:s'));
-			// $this->usuario_model->modifica($data_login, $validacion->id);
 			if($cuenta){
 				$data_session = array(
 					'conectado' => 1, 
@@ -120,7 +118,8 @@ class Panel extends Base_Controller {
 		}
 	}
 
-	public function salir(){
+	public function salir()
+	{
 		$this->session->sess_destroy();
 		redirect(base_url().'panel/ingresar');
 	}

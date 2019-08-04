@@ -42,12 +42,21 @@ class Establecimientos_model extends CI_Model {
             establecimiento.codigo as codigo,
             establecimiento.id_cp as id_cp,
             establecimiento.id_provincia as id_provincia,
+            establecimiento.id_ciudad as id_ciudad,
+            establecimiento.id_empresa as id_empresa,
+            establecimiento.estado as estado,
             
             provincia.provincia as provincia_nombre,
             poblacion.poblacion as poblacion_nombre,
 
             empresa.nombre as empresa_nombre,
-            DATE_FORMAT(establecimiento.fecha_registro, "%d/%m/%Y") as fecha_registro_formateado');
+            DATE_FORMAT(establecimiento.fecha_registro, "%d/%m/%Y") as fecha_registro_formateado,
+            
+            (SELECT COUNT(establecimiento_usuarios.id) 
+                FROM establecimiento_usuarios 
+                WHERE establecimiento_usuarios.estado != 0 
+                AND establecimiento_usuarios.id_establecimiento = establecimiento.id
+                AND establecimiento_usuarios.id_cuenta = '.$cuenta_id.') as cant_empleados');
         $this->db->from('establecimiento');
         $this->db->join('provincia', 'provincia.provinciaid = establecimiento.id_provincia');
         $this->db->join('poblacion', 'poblacion.poblacionid = establecimiento.id_ciudad', 'left');

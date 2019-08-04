@@ -7,11 +7,14 @@ class Principal extends Base_Controller {
 		parent::__construct();
 
 		//Configurando el data_header
-		$this->data_header['titulo'] = 'Verifica.me';
+		$this->data_header['titulo'] = 'Verificar.me | Gestión de horas de trabajo';
 	}
 
 	public function index()
 	{
+		$this->load->model('principal_model');
+		$this->data_header['planes'] = $this->principal_model->obtener_planes();
+
 		$this->load->view('template/web_1/principal', $this->data_header);
 	}
 }

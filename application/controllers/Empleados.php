@@ -31,7 +31,8 @@ class Empleados extends Base_Controller {
 		redirect(base_url().'panel');
 	}
 
-	public function eliminar(){
+	public function eliminar()
+	{
 		$id = $this->uri->segment(3);
 
 		$establecimiento_empleado = $this->empleados_model->obtener($id);
@@ -70,7 +71,8 @@ class Empleados extends Base_Controller {
 		redirect(base_url().'establecimientos/establecimiento/'.$establecimiento->codigo);
 	}
 
-	public function suspender(){
+	public function suspender()
+	{
 		$id = $this->uri->segment(3);
 
 		$establecimiento_empleado = $this->empleados_model->obtener($id);
@@ -105,7 +107,8 @@ class Empleados extends Base_Controller {
 		redirect(base_url().'establecimientos/establecimiento/'.$establecimiento->codigo);
 	}
 
-	public function activar(){
+	public function activar()
+	{
 		$id = $this->uri->segment(3);
 
 		$establecimiento_empleado = $this->empleados_model->obtener($id);

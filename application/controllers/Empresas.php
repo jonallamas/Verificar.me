@@ -42,6 +42,8 @@ class Empresas extends Base_Controller {
 
 		if($this->data_header['empresa'])
 		{
+			$this->data_header['js_editar']	= $this->load->view('empresas/_js/js_editar', $this->data_header, true);
+
 			$this->load->view('template/version_1/header', $this->data_header);
 			$this->load->view('empresas/editar');
 			$this->load->view('template/version_1/footer');
@@ -130,7 +132,8 @@ class Empresas extends Base_Controller {
 	    return $randomString;
 	}
 
-	public function eliminar(){
+	public function eliminar()
+	{
 		$codigo = $this->uri->segment(3);
 
 		$datos_empresa = array(
@@ -149,7 +152,8 @@ class Empresas extends Base_Controller {
 		redirect(base_url().'empresas');
 	}
 
-	public function suspender(){
+	public function suspender()
+	{
 		$codigo = $this->uri->segment(3);
 
 		$datos_empresa = array(
@@ -168,7 +172,8 @@ class Empresas extends Base_Controller {
 		redirect(base_url().'empresas');
 	}
 
-	public function activar(){
+	public function activar()
+	{
 		$codigo = $this->uri->segment(3);
 
 		$datos_empresa = array(
@@ -187,7 +192,8 @@ class Empresas extends Base_Controller {
 		redirect(base_url().'empresas');
 	}
 
-	public function lista(){
+	public function lista()
+	{
 		$cuenta_id = $this->session->userdata('cuenta_id');
 
 		$this->datatables->select('empresa.id as id,

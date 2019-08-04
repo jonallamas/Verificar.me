@@ -7,34 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Document Title -->
-    <title>Verificar.me | Gestión de Horas de Trabajo</title>
+    <title><?php echo $titulo; ?></title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="favicon.png">
 
-    <!-- CSS Files -->
-    <!--==== Google Fonts ====-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
 
-    <!--==== Bootstrap css file ====-->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/bootstrap.min.css">
-
-    <!--==== Font-Awesome css file ====-->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/font-awesome.min.css">
-
-    <!-- Owl Carusel css file -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/plugins/owl-carousel/owl.carousel.min.css">
-
-    <!-- ====video poppu css==== -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/plugins/Magnific-Popup/magnific-popup.css">
-
-    <!--==== Style css file ====-->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/style.css">
-
-    <!--==== Responsive css file ====-->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/responsive.css">
-
-    <!--==== Custom css file ====-->
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/custom.css">
 </head>
 
@@ -380,209 +365,57 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
-                    <div class="price-nav-wrap">
-                        <!-- price nav -->
-                        <div class="price--nav-inner">
-                            <nav>
-                                <div class="nav info-tabs">
-                                    <a class="price--nav-item active" id="nav-contact-tab" data-toggle="tab" href="#month">Mensual</a>
-                                    <a class="price--nav-item" data-toggle="tab" href="#year">Anual</a>
-                                </div>
-                            </nav>
+                <?php foreach ($planes as $plan) { ?>
+                <div class="col-md-6 col-lg-4">
+                    <!--Single price plan -->
+                    <div class="single-price-plan <?php if($plan->url == 'pro'){ echo 'active'; } ?> text-center">
+                        <div class="single-price-top">
+                            <h4><?php echo $plan->nombre; ?></h4>
+                            <span><?php echo $plan->precio; ?>€</span>
                         </div>
-                        <!-- End of price nav -->
-                    </div>
-                    <!-- nav tab content -->
-                    <div class="tab-content price-content">
-                        <div class="tab-pane fade active show" id="month" role="tabpanel">
-                            <div class="row">
-                                <div class="col-md-6 col-lg-4">
-                                    <!--Single price plan -->
-                                    <div class="single-price-plan text-center">
-                                        <div class="single-price-top">
-                                            <h4>Básico</h4>
-                                            <span>10€</span>
-                                        </div>
-                                        <div class="single-price-body">
-                                            <div class="price-list">
-                                                <ul>
-                                                    <li>
-                                                        <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                        1-3 Empleados
-                                                    </li>
-                                                    <li>
-                                                        <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                        1 Establecimiento
-                                                    </li>
-                                                    <li>
-                                                        <span><i class="fa fa-times" aria-hidden="true"></i></span>
-                                                        Soporte 24h
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <a href="<?php echo base_url(); ?>suscripcion/registro/basico" class="btn">Adquirir</a>
-                                        </div>
-                                    </div>
-                                    <!--end of Single price plan -->
-                                </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <!--Single price plan -->
-                                    <div class="single-price-plan active text-center">
-                                        <div class="single-price-top">
-                                            <h4>Pro</h4>
-                                            <span>20€</span>
-                                        </div>
-                                        <div class="single-price-body">
-                                            <div class="price-list">
-                                                <ul>
-                                                  <li>
-                                                      <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                      3-5 Empleados
-                                                  </li>
-                                                  <li>
-                                                      <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                      2 Establecimientos
-                                                  </li>
-                                                  <li>
-                                                      <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                      Soporte 24h
-                                                  </li>
-
-                                                </ul>
-                                            </div>
-                                            <a href="<?php echo base_url(); ?>suscripcion/registro/pro" class="btn">Adquirir</a>
-                                        </div>
-                                    </div>
-                                    <!--end of Single price plan -->
-                                </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <!--Single price plan -->
-                                    <div class="single-price-plan text-center">
-                                        <div class="single-price-top">
-                                            <h4>Ultra</h4>
-                                            <span>30€</span>
-                                        </div>
-                                        <div class="single-price-body">
-                                            <div class="price-list">
-                                                <ul>
-                                                  <li>
-                                                      <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                      Empleados Ilimitados
-                                                  </li>
-                                                  <li>
-                                                      <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                      Establecimientos Ilimitados
-                                                  </li>
-                                                  <li>
-                                                      <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                      Soporte 24h
-                                                  </li>
-                                                </ul>
-                                            </div>
-                                            <a href="<?php echo base_url(); ?>suscripcion/registro/ultra" class="btn">Adquirir</a>
-                                        </div>
-                                    </div>
-                                    <!--end of Single price plan -->
-                                </div>
+                        <div class="single-price-body">
+                            <div class="price-list">
+                                <ul>
+                                    <li>
+                                        <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                                        <?php if($plan->cant_empresas == 1){ ?>
+                                        <?php echo $plan->cant_empresas; ?> empresa
+                                        <?php }else{ ?>
+                                        <?php echo $plan->cant_empresas; ?> empresas
+                                        <?php } ?>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                                        <?php if($plan->cant_establecimientos == 1){ ?>
+                                        <?php echo $plan->cant_establecimientos; ?> establecimiento
+                                        <?php }else{ ?>
+                                        <?php echo $plan->cant_establecimientos; ?> establecimientos
+                                        <?php } ?>
+                                    </li>
+                                    <li>
+                                        <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                                        <?php if($plan->cant_empleados == 1){ ?>
+                                        <?php echo $plan->cant_empleados; ?> empleado x establecimiento
+                                        <?php }else{ ?>
+                                        <?php echo $plan->cant_empleados; ?> empleados x establecimiento
+                                        <?php } ?>
+                                    </li>
+                                    <li>
+                                        <?php if($plan->url == 'pro' || $plan->url == 'ultra'){ ?>
+                                        <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                                        <?php }else{ ?>
+                                        <span><i class="fa fa-times" aria-hidden="true"></i></span>
+                                        <?php } ?>
+                                        Soporte 24h
+                                    </li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="year" role="tabpanel">
-                            <div class="row">
-                                <div class="col-md-6 col-lg-4">
-                                    <!--Single price plan -->
-                                    <div class="single-price-plan text-center">
-                                        <div class="single-price-top">
-                                            <h4>Básico</h4>
-                                            <span>100€</span>
-                                        </div>
-                                        <div class="single-price-body">
-                                            <div class="price-list">
-                                              <ul>
-                                                  <li>
-                                                      <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                      1-3 Empleados
-                                                  </li>
-                                                  <li>
-                                                      <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                      1 Establecimiento
-                                                  </li>
-                                                  <li>
-                                                      <span><i class="fa fa-times" aria-hidden="true"></i></span>
-                                                      Soporte 24h
-                                                  </li>
-                                              </ul>
-                                          </div>
-                                          <a href="#" class="btn">Adquirir</a>
-                                        </div>
-                                    </div>
-                                    <!--end of Single price plan -->
-                                </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <!--Single price plan -->
-                                    <div class="single-price-plan active text-center">
-                                        <div class="single-price-top">
-                                            <h4>Pro</h4>
-                                            <span>200€</span>
-                                        </div>
-                                        <div class="single-price-body">
-                                            <div class="price-list">
-                                              <ul>
-                                                <li>
-                                                    <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                    3-5 Empleados
-                                                </li>
-                                                <li>
-                                                    <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                    2 Establecimientos
-                                                </li>
-                                                <li>
-                                                    <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                    Soporte 24h
-                                                </li>
-
-                                              </ul>
-                                          </div>
-                                          <a href="#" class="btn">Adquirir</a>
-                                        </div>
-                                    </div>
-                                    <!--end of Single price plan -->
-                                </div>
-                                <div class="col-md-6 col-lg-4">
-                                    <!--Single price plan -->
-                                    <div class="single-price-plan text-center">
-                                        <div class="single-price-top">
-                                            <h4>Ultra</h4>
-                                            <span>340€</span>
-                                        </div>
-                                        <div class="single-price-body">
-                                            <div class="price-list">
-                                              <ul>
-                                                <li>
-                                                    <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                    Empleados Ilimitados
-                                                </li>
-                                                <li>
-                                                    <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                    Establecimientos Ilimitados
-                                                </li>
-                                                <li>
-                                                    <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                                    Soporte 24h
-                                                </li>
-                                              </ul>
-                                            </div>
-                                            <a href="#" class="btn">Adquirir</a>
-                                          </div>
-                                        </div>
-                                    </div>
-                                    <!--end of Single price plan -->
-                                </div>
-                            </div>
+                            <a href="<?php echo base_url(); ?>suscripcion/registro/<?php echo $plan->url; ?>" class="btn">Adquirir</a>
                         </div>
                     </div>
-                    <!-- End of nav tab content -->
+                    <!--end of Single price plan -->
                 </div>
+                <?php } ?>
             </div>
         </div>
     </section>
@@ -798,48 +631,22 @@
                   © copyright 2019 <a href="https://verificar.me">Verificar.me</a> | Derechos reservados by <a href="https://pixelfactory.es">P.F</a></p>
             </div>
         </div>
-
     </footer>
 
-    <!-- back to top -->
     <div class="back-to-top">
         <a href="#"><i class="fa fa-chevron-up"></i></a>
     </div>
-    <!-- back to top -->
 
-
-    <!-- JS Files -->
-   <!-- ==== JQuery 3.3.1 js file==== -->
     <script src="<?php echo base_url(); ?>assets/homeweb/js/jquery-3.3.1.min.js"></script>
-
-    <!-- ==== Bootstrap js file==== -->
     <script src="<?php echo base_url(); ?>assets/homeweb/js/bootstrap.bundle.min.js"></script>
-
-    <!-- ==== JQuery Waypoint js file==== -->
     <script src="<?php echo base_url(); ?>assets/homeweb/plugins/waypoints/jquery.waypoints.min.js"></script>
-
-    <!-- ==== Parsley js file==== -->
     <script src="<?php echo base_url(); ?>assets/homeweb/plugins/parsley/parsley.min.js"></script>
-
-    <!-- ==== parallax js==== -->
     <script src="<?php echo base_url(); ?>assets/homeweb/plugins/parallax/parallax.js"></script>
-
-    <!-- ==== Owl Carousel js file==== -->
     <script src="<?php echo base_url(); ?>assets/homeweb/plugins/owl-carousel/owl.carousel.min.js"></script>
-
-    <!-- ==== Menu  js file==== -->
     <script src="<?php echo base_url(); ?>assets/homeweb/js/menu.min.js"></script>
-
-    <!-- ===video popup=== -->
     <script src="<?php echo base_url(); ?>assets/homeweb/plugins/Magnific-Popup/jquery.magnific-popup.min.js"></script>
-
-    <!-- ====Counter js file=== -->
     <script src="<?php echo base_url(); ?>assets/homeweb/plugins/waypoints/jquery.counterup.min.js"></script>
-
-    <!-- ==== Script js file==== -->
     <script src="<?php echo base_url(); ?>assets/homeweb/js/scripts.js"></script>
-
-    <!-- ==== Custom js file==== -->
     <script src="<?php echo base_url(); ?>assets/homeweb/js/custom.js"></script>
 
 </body>

@@ -93,3 +93,6 @@ CREATE TABLE IF NOT EXISTS `verifica_db`.`establecimiento_usuarios_historial` (
 	`actualizado` DATETIME DEFAULT NULL,
 	PRIMARY KEY (`id`)
 )ENGINE = InnoDB;
+
+-- 04/08/2019
+ALTER TABLE `suscripcion` ADD `url` VARCHAR(32) DEFAULT NULL AFTER `nombre`;

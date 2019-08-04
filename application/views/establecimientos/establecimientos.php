@@ -1,6 +1,6 @@
 <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
 
-<div class="breadcrumbs-dark pb-0 pt-4" id="breadcrumbs-wrapper">
+<div class="breadcrumbs-dark pb-2 pt-1" id="breadcrumbs-wrapper">
   	<!-- Search for small screen-->
   	<div class="container">
     	<div class="row">
@@ -27,45 +27,51 @@
 			<div class="card card card-default scrollspy" style="overflow: visible !important;">
 			    <div class="card-content">
 			      	<h4 class="card-title">Agrega un nuevo establecimiento</h4>
-			      	<form action="<?php echo base_url(); ?>establecimientos/guardar" method="post" id="f_form" name="f_form">
+			      	<form action="<?php echo base_url(); ?>establecimientos/guardar" class="formValidate" method="post" id="f_form" name="f_form">
 			        	<div class="row">
-			          		<div class="col m4 s12">
+			          		<div class="select-field col m4 s12">
 			            		<label for="f_establecimiento_empresa">Empresa</label>
-			            		<select class="browser-default" name="f_establecimiento_empresa" id="f_establecimiento_empresa">
+			            		<select class="browser-default" name="f_establecimiento_empresa" id="f_establecimiento_empresa" data-error=".errorTxt1">
 			                      <option value="" disabled selected>Seleccione una opción</option>
 			                      <?php foreach ($empresas as $empresa) { ?>
 			                      <option value="<?php echo $empresa->id; ?>"><?php echo $empresa->nombre; ?></option>
 			                      <?php } ?>
 			                    </select>
+			                    <div class="errorTxt1 mismalinea"></div>
 			          		</div>
 			          		<div class="input-field col m4 s12">
-			            		<input id="f_establecimiento_nombre" name="f_establecimiento_nombre" type="text">
+			            		<input id="f_establecimiento_nombre" name="f_establecimiento_nombre" type="text" data-error=".errorTxt2">
 			            		<label for="f_establecimiento_nombre">Nombre</label>
+			            		<div class="errorTxt2 mismalinea"></div>
 			          		</div>
 			          		<div class="input-field col m4 s12">
-	                      		<input id="f_establecimiento_direccion" name="f_establecimiento_direccion" type="text">
+	                      		<input id="f_establecimiento_direccion" name="f_establecimiento_direccion" type="text" data-error=".errorTxt3">
 	                      		<label for="f_establecimiento_direccion">Dirección</label>
+	                      		<div class="errorTxt3 mismalinea"></div>
                     		</div>
 			        	</div>
 		                <div class="row">
-		                  <div class="col m5 s12">
+		                  <div class="select-field col m5 s12">
 		                    <label for="f_establecimiento_provincia">Provincia</label>
-		                    <select class="browser-default" name="f_establecimiento_provincia" id="f_establecimiento_provincia">
+		                    <select class="browser-default" name="f_establecimiento_provincia" id="f_establecimiento_provincia" data-error=".errorTxt4">
 		                      <option value="" disabled selected>Seleccione una opción</option>
 		                      <?php foreach ($provincias as $provincia) { ?>
 		                      <option value="<?php echo $provincia->provinciaid; ?>"><?php echo $provincia->provincia; ?></option>
 		                      <?php } ?>
 		                    </select>
+		                    <div class="errorTxt4 mismalinea"></div>
 		                  </div>
-		                  <div class="col m5 s12">
+		                  <div class="select-field col m5 s12">
 		                    <label for="f_establecimiento_poblacion">Población</label>
-		                    <select disabled class="browser-default" name="f_establecimiento_poblacion" id="f_establecimiento_poblacion">
+		                    <select disabled class="browser-default" name="f_establecimiento_poblacion" id="f_establecimiento_poblacion" data-error=".errorTxt5">
 		                      <option value="" selected>Seleccione una opción</option>
 		                    </select>
+		                    <div class="errorTxt5 mismalinea"></div>
 		                  </div>
-		                  <div class="col m2 s12">
+		                  <div class="input-field col m2 s12">
 		                      <label for="f_establecimiento_cod_postal">Cód. postal</label>
-		                      <input name="f_establecimiento_cod_postal" id="f_establecimiento_cod_postal" type="text">
+		                      <input name="f_establecimiento_cod_postal" id="f_establecimiento_cod_postal" type="text" data-error=".errorTxt6">
+		                      <div class="errorTxt6 mismalinea"></div>
 		                    </div>
 		                </div>
 		          		<div class="row">

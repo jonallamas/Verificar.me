@@ -39,6 +39,7 @@ class Suscripcion extends Base_Controller {
 		$datos_usuario = array(
 			'apellido' 		=> $this->input->post('f_datos_apellido'),
 			'nombre' 		=> $this->input->post('f_datos_nombre'),
+			'dni' 			=> $this->input->post('f_datos_dni'),
 			'telefono' 		=> $this->input->post('f_datos_telefono'),
 			'correo' 		=> $this->input->post('f_datos_correo'),
 			

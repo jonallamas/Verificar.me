@@ -79,10 +79,10 @@ if($_SERVER['SERVER_ADDR'] == "127.0.0.1"){
 	$db_password = "";
 	$db_name = "verifica_db";
 }else{
-	$db_host = "";
-	$db_usuario = "";
-	$db_password = "";
-	$db_name = "";
+	$db_host = "localhost";
+	$db_usuario = "verifica_usadmin";
+	$db_password = "@cygr02mebi0";
+	$db_name = "verifica_db";
 }
 
 $db['default'] = array(

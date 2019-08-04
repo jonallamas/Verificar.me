@@ -1,6 +1,6 @@
 <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
 
-<div class="breadcrumbs-dark pb-0 pt-4" id="breadcrumbs-wrapper">
+<div class="breadcrumbs-dark pb-2 pt-1" id="breadcrumbs-wrapper">
   	<!-- Search for small screen-->
   	<div class="container">
     	<div class="row">
@@ -22,23 +22,17 @@
 <div class="col s12 m12 section-data-tables">
 	<div class="container">
 		<div class="section">
-			<!-- <div class="row">
-				<div class="col s12">
-					<div class="card card-default">
-						<div class="card-content">
-							<h4><?php echo $establecimiento->nombre; ?></h4>
-							<pre><?php print_r($establecimiento); ?></pre>
-						</div>
-					</div>
-				</div>
-			</div> -->
 			<div class="row">
 				<div class="col s12 m5 l4">
 					<div class="card card-default">
 						<div class="card-content">
-							<h4><?php echo $establecimiento->nombre; ?></h4>
-							<!-- <pre><?php print_r($establecimiento); ?></pre> -->
-							<div class="input-field" style="margin-top: 35px;">
+							<h4 style="margin-bottom: 0px;"><?php echo $establecimiento->nombre; ?></h4>
+							<?php if($establecimiento->cant_empleados == 1){ ?>
+							<label class="active" style="font-weight: bolder; color: #333;">Posee un total de <?php echo $establecimiento->cant_empleados; ?> empleado</label>
+							<?php }else{ ?>
+			    			<label class="active" style="font-weight: bolder; color: #333;">Posee un total de <?php echo $establecimiento->cant_empleados; ?> empleados</label>
+							<?php } ?>
+			    			<div class="input-field" style="margin-top: 25px;">
 			    				<label class="active">Empresa</label>
 			    				<h6><?php echo $establecimiento->empresa_nombre; ?></h6>
 			    			</div>
@@ -63,6 +57,7 @@
 					</div>
 				</div>
 				<div class="col s12 m7 l8">
+					<?php if($establecimiento->estado == 1 && $establecimiento->cant_empleados < $cuenta->suscripcion_cant_empleados){ ?>
 					<div class="card card-default">
 						<div class="card-content">
 							<form action="" id="form_buscador_dni" class="col s12">
@@ -78,6 +73,7 @@
 							</form>
 						</div>
 					</div>
+					<?php } ?>
 					<div class="card card card-default scrollspy">
 						<div class="card-content">
 							<h4 class="card-title">Lista de empleados</h4>
@@ -140,7 +136,7 @@
 		margin-bottom: 35px;	
 	}
 </style>
-
+<?php if($establecimiento->estado == 1 && $establecimiento->cant_empleados < $cuenta->suscripcion_cant_empleados){ ?>
 <div id="modalBuscador" class="modal">
     <div class="modal-content">
     	<h5 style="margin-top: 0px;">Información del usuario</h5>
@@ -171,5 +167,6 @@
       	<button type="button" class="modal-action btn waves-effect waves-light" id="btnAgregarEmpleado">Agregar</button>
     </div>
 </div>
+<?php } ?>
 
 <?php echo $js_establecimiento; ?>

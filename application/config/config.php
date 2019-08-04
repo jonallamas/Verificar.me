@@ -27,7 +27,7 @@ if($_SERVER['SERVER_ADDR'] == "127.0.0.1"){
 	$config['base_url'] = 'http://127.0.0.1/proyectosPersonalesCI/Verifica.me/';
 }
 else{
-	$config['base_url'] = 'https://verifica.me';
+	$config['base_url'] = 'https://verificar.me';
 }
 
 /*

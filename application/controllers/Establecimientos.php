@@ -44,11 +44,11 @@ class Establecimientos extends Base_Controller {
 		$codigo	= $this->uri->segment(3);
 
 		$this->data_header['establecimiento'] = $this->establecimientos_model->obtener($codigo);
-		$this->data_header['empleados'] = $this->establecimientos_model->obtener_empleados($this->data_header['establecimiento']->id);
 
 		if($this->data_header['establecimiento'])
 		{
 			$this->data_header['js_establecimiento']	= $this->load->view('establecimientos/_js/js_establecimiento', $this->data_header, true);
+			$this->data_header['empleados'] = $this->establecimientos_model->obtener_empleados($this->data_header['establecimiento']->id);
 			
 			$this->load->view('template/version_1/header', $this->data_header);
 			$this->load->view('establecimientos/establecimiento');
@@ -64,12 +64,15 @@ class Establecimientos extends Base_Controller {
 		$codigo	= $this->uri->segment(3);
 
 		$this->data_header['establecimiento'] = $this->establecimientos_model->obtener($codigo);
-		$this->data_header['provincias'] = $this->establecimientos_model->obtener_provincias();
-		$this->data_header['poblaciones'] = $this->establecimientos_model->obtener_poblaciones_id($this->data_header['establecimiento']->id_provincia);
 
 		if($this->data_header['establecimiento'])
 		{
 			$this->data_header['js_editar']	= $this->load->view('establecimientos/_js/js_editar', $this->data_header, true);
+
+			$this->load->model('empresas_model');
+			$this->data_header['empresas'] = $this->empresas_model->obtener_todos();
+			$this->data_header['provincias'] = $this->establecimientos_model->obtener_provincias();
+			$this->data_header['poblaciones'] = $this->establecimientos_model->obtener_poblaciones_id($this->data_header['establecimiento']->id_provincia);
 			
 			$this->load->view('template/version_1/header', $this->data_header);
 			$this->load->view('establecimientos/editar');
@@ -231,7 +234,7 @@ class Establecimientos extends Base_Controller {
 				$this->session->set_userdata(array('alerta' => 22));
 			}
 		}else{
-			if($cuenta->cant_empresas >= $cuenta->suscripcion_cant_empresas){
+			if($cuenta->cant_establecimientos >= $cuenta->suscripcion_cant_establecimientos){
 				redirect(base_url().'establecimientos');
 				exit();
 			}
@@ -268,7 +271,8 @@ class Establecimientos extends Base_Controller {
 		redirect(base_url().'establecimientos');
 	}
 
-	public function eliminar(){
+	public function eliminar()
+	{
 		$codigo = $this->uri->segment(3);
 
 		$datos_establecimiento = array(
@@ -287,7 +291,8 @@ class Establecimientos extends Base_Controller {
 		redirect(base_url().'establecimientos');
 	}
 
-	public function suspender(){
+	public function suspender()
+	{
 		$codigo = $this->uri->segment(3);
 
 		$datos_establecimiento = array(
@@ -306,7 +311,8 @@ class Establecimientos extends Base_Controller {
 		redirect(base_url().'establecimientos');
 	}
 
-	public function activar(){
+	public function activar()
+	{
 		$codigo = $this->uri->segment(3);
 
 		$datos_establecimiento = array(
@@ -337,7 +343,8 @@ class Establecimientos extends Base_Controller {
 	    return $randomString;
 	}
 
-	public function lista(){
+	public function lista()
+	{
 		$cuenta_id = $this->session->userdata('cuenta_id');
 
 		$this->datatables->select('establecimiento.id as id,

@@ -17,27 +17,17 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/fonts/fontawesome/css/all.css">
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/vendors.min.css">
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/animate-css/animate.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist.min.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-tooltip.css"> -->
+
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/theme/materialize.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/theme/style.css">
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/dashboard-modern.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/intro.css"> -->
-    <!-- <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/pricing.css"> -->
 
     <script src="<?php echo base_url(); ?>assets/css/js/vendors.min.js" type="text/javascript"></script>
 
-    <!-- <script src="<?php echo base_url(); ?>assets/css/vendors/chartjs/chart.min.js" type="text/javascript"></script> -->
-    <!-- <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist.min.js" type="text/javascript"></script> -->
-    <!-- <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-tooltip.js" type="text/javascript"></script> -->
-    <!-- <script src="<?php echo base_url(); ?>assets/css/vendors/chartist-js/chartist-plugin-fill-donut.min.js" type="text/javascript"></script> -->
 
     <script src="<?php echo base_url(); ?>assets/css/js/plugins.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/css/js/custom/custom-script.js" type="text/javascript"></script>
 
-    <!-- <script src="<?php echo base_url(); ?>assets/css/js/scripts/dashboard-modern.js" type="text/javascript"></script> -->
     <script src="<?php echo base_url(); ?>assets/css/js/scripts/intro.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/js/script.js" type="text/javascript"></script>
 
@@ -51,6 +41,10 @@
     <!-- Modificaciones CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/custom/custom.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/theme/modification.css">
+
+    <!-- Validate -->
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/css/vendors/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/css/vendors/jquery-validation/localization/messages_es.js"></script>
   </head>
   <body>
     <div id="modalActionGeneral" class="modal">
@@ -68,15 +62,15 @@
       <div class="navbar navbar-fixed">
         <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-dark gradient-45deg-indigo-purple no-shadow">
           <div class="nav-wrapper">
-            <div class="header-search-wrapper hide-on-med-and-down"><i class="material-icons">search</i>
+            <!-- <div class="header-search-wrapper hide-on-med-and-down"><i class="material-icons">search</i>
               <input class="header-search-input z-depth-2" type="text" name="Search" placeholder="Busca aqui empleados, establecimientos ...">
-            </div>
+            </div> -->
             <ul class="navbar-list right">
               <!-- <li class="hide-on-med-and-down"><a class="waves-effect waves-block waves-light translation-button" href="javascript:void(0);" data-target="translation-dropdown"><span class="flag-icon flag-icon-gb"></span></a></li> -->
               <li class="hide-on-med-and-down"><a class="waves-effect waves-block waves-light toggle-fullscreen" href="javascript:void(0);"><i class="material-icons">settings_overscan</i></a></li>
               <li class="hide-on-large-only"><a class="waves-effect waves-block waves-light search-button" href="javascript:void(0);"><i class="material-icons">search</i></a></li>
               <li><a class="waves-effect waves-block waves-light notification-button" href="javascript:void(0);" data-target="notifications-dropdown"><i class="material-icons">notifications_none<small class="notification-badge pulse">5</small></i></a></li>
-              <li><a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown"><span class="avatar-status avatar-online"><img src="<?php echo base_url(); ?>assets/css/images/avatar/avatar-7.png" alt="avatar"><i></i></span></a></li>
+              <li><a class="waves-effect waves-block waves-light profile-button" href="javascript:void(0);" data-target="profile-dropdown"><span class="avatar-status avatar-online"><img src="<?php echo base_url(); ?>assets/css/images/profile_user_default.png" alt="avatar"><i></i></span></a></li>
               <li><a class="waves-effect waves-block waves-light sidenav-trigger" href="#" data-target="slide-out-right"><i class="material-icons">format_indent_increase</i></a></li>
             </ul>
             <!-- <ul class="dropdown-content" id="translation-dropdown">

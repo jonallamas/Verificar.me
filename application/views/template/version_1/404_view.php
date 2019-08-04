@@ -17,7 +17,7 @@
     <!-- BEGIN: Page Level CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/theme/materialize.css">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/theme/style.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/page-404.css">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/pages/page-404.min.css">
     <!-- END: Page Level CSS-->
     <!-- BEGIN: Custom CSS-->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/css/custom/custom.css">
@@ -42,16 +42,8 @@
       </div>
     </div>
 
-    <!-- BEGIN VENDOR JS-->
     <script src="<?php echo base_url(); ?>assets/css/js/vendors.min.js" type="text/javascript"></script>
-    <!-- BEGIN VENDOR JS-->
-    <!-- BEGIN PAGE VENDOR JS-->
-    <!-- END PAGE VENDOR JS-->
-    <!-- BEGIN THEME  JS-->
     <script src="<?php echo base_url(); ?>assets/css/js/plugins.js" type="text/javascript"></script>
     <script src="<?php echo base_url(); ?>assets/css/js/custom/custom-script.js" type="text/javascript"></script>
-    <!-- END THEME  JS-->
-    <!-- BEGIN PAGE LEVEL JS-->
-    <!-- END PAGE LEVEL JS-->
   </body>
 </html>

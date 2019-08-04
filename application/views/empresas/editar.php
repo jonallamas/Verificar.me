@@ -1,6 +1,6 @@
 <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
 
-<div class="breadcrumbs-dark pb-0 pt-4" id="breadcrumbs-wrapper">
+<div class="breadcrumbs-dark pb-2 pt-1" id="breadcrumbs-wrapper">
   	<!-- Search for small screen-->
   	<div class="container">
     	<div class="row">
@@ -25,19 +25,22 @@
 			<div class="card card card-default scrollspy" style="overflow: visible !important;">
 			    <div class="card-content">
 			      	<h4 class="card-title">Modificar empresa</h4>
-			      	<form action="<?php echo base_url(); ?>empresas/guardar" method="post" id="f_form" name="f_form">
+			      	<form action="<?php echo base_url(); ?>empresas/guardar" class="formValidate" method="post" id="f_form" name="f_form">
 			        	<div class="row">
 			          		<div class="input-field col m6 s12">
-			            		<input id="f_empresa_nombre" name="f_empresa_nombre" type="text" value="<?php echo $empresa->nombre; ?>">
+			            		<input id="f_empresa_nombre" name="f_empresa_nombre" type="text" value="<?php echo $empresa->nombre; ?>" data-error=".errorTxt1">
 			            		<label for="f_empresa_nombre">Nombre</label>
+			            		<div class="errorTxt1"></div>
 			          		</div>
 			          		<div class="input-field col m3 s12">
-								<input id="f_empresa_dni" name="f_empresa_dni" type="text" value="<?php echo $empresa->dni; ?>">
+								<input id="f_empresa_dni" name="f_empresa_dni" type="text" value="<?php echo $empresa->dni; ?>" data-error=".errorTxt2">
 								<label for="f_empresa_dni">DNI</label>
+								<div class="errorTxt2"></div>
                     		</div>
                     		<div class="input-field col m3 s12">
-								<input id="f_empresa_nif" name="f_empresa_nif" type="text" value="<?php echo $empresa->nif; ?>">
+								<input id="f_empresa_nif" name="f_empresa_nif" type="text" value="<?php echo $empresa->nif; ?>" data-error=".errorTxt3">
 								<label for="f_empresa_nif">NIF</label>
+								<div class="errorTxt3"></div>
                     		</div>
 			        	</div>
 	          		<div class="row">
@@ -53,3 +56,5 @@
 		</div>
 	</div>
 </div>
+
+<?php echo $js_editar; ?>

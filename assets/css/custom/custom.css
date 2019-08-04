@@ -10,6 +10,10 @@ NOTE:
 PLACE HERE YOUR OWN CSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
 WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
 
+body{
+	background-color: #f2f4f8;
+}
+
 .btn, .btn-large, .btn-small, .btn-flat{
 	padding: 0px 1rem;
 }
@@ -37,3 +41,8 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BET
 table.dataTable.no-footer{
 	    border-bottom: 1px solid #cfd8dc;
 }
+
+/*.sidenav-dark .brand-sidebar{
+	background: transparent;
+	box-shadow: none;
+}*/
