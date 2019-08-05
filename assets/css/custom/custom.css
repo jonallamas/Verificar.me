@@ -46,3 +46,11 @@ table.dataTable.no-footer{
 	background: transparent;
 	box-shadow: none;
 }*/
+
+.navbar #notifications-dropdown li > p {
+	font-size: .8rem;
+    font-weight: 400;
+    margin-left: 38px;
+	margin-top: 5px;
+	margin-bottom: 0px;
+}
