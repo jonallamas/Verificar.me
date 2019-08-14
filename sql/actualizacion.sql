@@ -96,3 +96,15 @@ CREATE TABLE IF NOT EXISTS `verifica_db`.`establecimiento_usuarios_historial` (
 
 -- 04/08/2019
 ALTER TABLE `suscripcion` ADD `url` VARCHAR(32) DEFAULT NULL AFTER `nombre`;
+
+-- 14/08/2019
+CREATE TABLE IF NOT EXISTS `verifica_db`.`registro_horario` (
+	`id` INT NOT NULL AUTO_INCREMENT,
+	`id_usuario` INT NOT NULL,
+	`id_establecimiento` INT NOT NULL,
+	`horaEntrada` TIME NOT NULL,
+	`horaSalida` TIME NOT NULL,
+	`estado` INT DEFAULT NULL,
+	`creado` DATETIME DEFAULT NULL,
+	PRIMARY KEY (`id`)
+)ENGINE = InnoDB;

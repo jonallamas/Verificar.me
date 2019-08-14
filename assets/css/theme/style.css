@@ -9330,6 +9330,28 @@ nav.display-none.search-sm .nav-wrapper form .input-field input.search-box-sm:no
     width: 100%;
 }
 
+.select-field div.error
+{
+    font-size: .8rem;
+
+    position: relative;
+    top: 0rem;
+    left: 0rem;
+
+    -webkit-transform: translateY(0%);
+       -moz-transform: translateY(0%);
+        -ms-transform: translateY(0%);
+         -o-transform: translateY(0%);
+            transform: translateY(0%);
+
+    color: #ff4081;
+}
+
+.select-field label.active
+{
+    width: 100%;
+}
+
 .left-alert input[type=text] + label:after,
 .left-alert input[type=password] + label:after,
 .left-alert input[type=email] + label:after,

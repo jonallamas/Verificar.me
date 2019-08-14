@@ -119,6 +119,11 @@
                             <p class="media-meta">Ha alcanzado el límite máximo de establecimientos por crear.</p>
                         </li>
                         <?php } ?>
+                        <?php if($cuenta->cant_establecimientos < $cuenta->suscripcion_cant_establecimientos && $cuenta->cant_empresas < $cuenta->suscripcion_cant_empresas){ ?>
+                        <li>
+                            Actualmente no posee notificaciones
+                        </li>
+                        <?php } ?>
                     </ul>
                     <ul class="dropdown-content" id="profile-dropdown">
                         <!-- <li><a class="grey-text text-darken-1" href="user-profile-page.html"><i class="material-icons">person_outline</i> Profile</a></li> -->

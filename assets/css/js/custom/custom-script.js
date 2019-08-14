@@ -13,6 +13,7 @@ WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR CUSTOM SCRIPT I
 function modal_action_general(codigo, data, ruta, texto_superior, btn_nombre, btn_color){
     $('#modalActionGeneral_texto').html(texto_superior);
     $('#modalActionGeneral_data').html(data);
+
     var btnColor;
     switch(btn_color){
         case 'rojo':
@@ -25,14 +26,12 @@ function modal_action_general(codigo, data, ruta, texto_superior, btn_nombre, bt
             btnColor = 'orange darken-4';
             break;
     }
-    $('#modalActionGeneral_btn').removeClass();
-    $('#modalActionGeneral_btn').addClass('modal-action btn waves-effect waves-light');
-    $('#modalActionGeneral_btn').html(btn_nombre).addClass(btnColor);
+    
+    $('#modalActionGeneral_btn').removeClass().addClass('modal-action btn waves-effect waves-light '+btnColor).html(btn_nombre);
     $('#modalActionGeneral').modal('open');
     $('#modalActionGeneral_btn').click(function(){
         $('#modalActionGeneral').modal('close');
-        var URLDestino = base_url+ruta+'/'+codigo;
-        window.location = URLDestino;
+        window.location = base_url+ruta+'/'+codigo;
     })
 }
 
