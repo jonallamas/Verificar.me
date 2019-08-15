@@ -12,7 +12,7 @@ class API extends Base_Controller {
 		$this->load->model('modulo_usuario/usuario_model');
 		$this->load->model('establecimientosusuarios_model');
 		$this->load->model('establecimientos_model');
-		$this->load->model('registroHorarios_model');
+		$this->load->model('registrohorarios_model');
 	}
 
 	public function login()
@@ -22,7 +22,7 @@ class API extends Base_Controller {
 		// $login_password = $this->input->post('f_login_password');
 
 		//Prueba
-		$login_correo = "demo@verifica.me";
+		$login_correo = "demo@verificar.me";
 		$login_password = "c514c91e4ed341f263e458d44b3bb0a7";
 		
 		$validacion = $this->usuario_model->login($login_correo, $login_password);
@@ -37,17 +37,16 @@ class API extends Base_Controller {
 				'usuario_nombre_completo' => $validacion->apellido.' '.$validacion->nombre, 
 				'usuario_correo' => $validacion->correo
 			);
-    		json_encode($usuario);
 		}else{
 			$usuario = array();
 		}
-		return $usuario;
+		echo json_encode($usuario);
 	}
 
 	public function obtenerLocalesUsuario($idUsuario)
 	{
 		$establecimientos = $this->establecimientosusuarios_model->obtener_establecimiento_x_usuario($idUsuario);
-		return $establecimientos;
+		echo json_encode($establecimientos);
 	}
 
 	public function insertarHora()
@@ -67,10 +66,10 @@ class API extends Base_Controller {
 	        'creado'  				=> date('Y-m-d H:i:s')
 		);
 
-		if($this->registroHorarios_model->alta($data)){
-			return true;
+		if($this->registrohorarios_model->alta($data)){
+			echo 1;
 		}else{
-			return false;
+			echo 0;
 		}
 	}
 
