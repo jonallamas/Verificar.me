@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="utf-8">
@@ -7,40 +7,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Document Title -->
-    <title><?php echo $titulo; ?></title>
+    <title><?php echo $titulo; ?> | Gestión de Horas de Trabajo</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" type="image/png" href="<?php echo base_url(); ?>assets/homeweb/img/favicon.png">
 
+    <!-- CSS Files -->
+    <!--==== Google Fonts ====-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,500,600" rel="stylesheet">
 
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/font-awesome.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/plugins/owl-carousel/owl.carousel.min.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/plugins/Magnific-Popup/magnific-popup.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/style.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/responsive.css">
-    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/custom.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/bootstrap.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/plugins/owl-carousel/owl.carousel.min.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/plugins/Magnific-Popup/magnific-popup.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/style.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/responsive.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/homeweb/css/custom.css">
 </head>
 
 <body>
-    <!-- Preloader -->
-    <!-- <div class="preLoader">
-        <div class="preload-inner">
-            <div class="sk-cube-grid">
-                <div class="sk-cube sk-cube1"></div>
-                <div class="sk-cube sk-cube2"></div>
-                <div class="sk-cube sk-cube3"></div>
-                <div class="sk-cube sk-cube4"></div>
-                <div class="sk-cube sk-cube5"></div>
-                <div class="sk-cube sk-cube6"></div>
-                <div class="sk-cube sk-cube7"></div>
-                <div class="sk-cube sk-cube8"></div>
-                <div class="sk-cube sk-cube9"></div>
-            </div>
-        </div>
-    </div> -->
-    <!-- End Of Preloader -->
 
     <!-- Main header -->
     <header class="header">
@@ -52,8 +40,8 @@
                         <div class="col-xl-3 col-lg-3 col-md-4 col-6">
                             <!-- Logo -->
                             <div class="logo">
-                                <a href="index.html">
-                                    <img src="<?php echo base_url(); ?>assets/homeweb/img/logo.png" data-rjs="2" alt="Verificar.me">
+                                <a href="<?php echo base_url(); ?>">
+                                    <img src="<?php echo base_url(); ?>assets/homeweb/img/logo.svg" data-rjs="2" alt="Verificar.me">
                                 </a>
                             </div>
                             <!-- End of Logo -->
@@ -84,7 +72,7 @@
                         </div>
                         <div class="col-lg-3 col-md-4 col-sm-5 d-md-block d-none">
                             <div class="urgent-call text-right">
-                               <a href="https://verificar.me/panel" class="btn">Registro / Iniciar sesión</a>
+                               <strong><a href="https://verificar.me/panel" class="btn">Registro - Iniciar sesión</a></strong>
                             </div>
                         </div>
                     </div>
@@ -105,13 +93,12 @@
                         <div class="banner-text-inner">
                             <div class="banner-shape-wrap">
                                 <div class="banner-shape-inner">
-                                    <img src="<?php echo base_url(); ?>assets/homeweb/img/banner/shaps1.png" alt="" class='shape shape1 rotate3d'>
-                                    <img src="<?php echo base_url(); ?>assets/homeweb/img/banner/shaps2.png" alt="" class='shape shape2 rotate2d'>
-                                    <img src="<?php echo base_url(); ?>assets/homeweb/homeweb/img/banner/shaps3.png" alt="" class='shape shape3 rotate-2d'>
-                                    <img src="<?php echo base_url(); ?>assets/homeweb/homeweb/img/banner/shaps4.png" alt="" class='shape shape4 rotate3d'>
-
-                                    <img src="<?php echo base_url(); ?>assets/homeweb/img/banner/shaps6.png" alt="" class='shape shape6 rotate-2d'>
-                                    <img src="<?php echo base_url(); ?>assets/homeweb/img/banner/shaps7.png" alt="" class='shape shape7 rotate3d'>
+                                  <img src="<?php echo base_url(); ?>assets/homeweb/img/banner/shaps1.png" alt="" class='shape shape1 rotate3d'>
+                                  <img src="<?php echo base_url(); ?>assets/homeweb/img/banner/shaps2.png" alt="" class='shape shape2 rotate2d'>
+                                  <img src="<?php echo base_url(); ?>assets/homeweb/homeweb/img/banner/shaps3.png" alt="" class='shape shape3 rotate-2d'>
+                                  <img src="<?php echo base_url(); ?>assets/homeweb/homeweb/img/banner/shaps4.png" alt="" class='shape shape4 rotate3d'>
+                                  <img src="<?php echo base_url(); ?>assets/homeweb/img/banner/shaps6.png" alt="" class='shape shape6 rotate-2d'>
+                                  <img src="<?php echo base_url(); ?>assets/homeweb/img/banner/shaps7.png" alt="" class='shape shape7 rotate3d'>
                                 </div>
                             </div>
 
@@ -148,45 +135,68 @@
                     <!-- End of section title -->
                 </div>
             </div>
-            <div class="row justify-content-center">
-                <div class="col-xl-10 col-lg-12">
-                    <div class="feature-carousel owl-carousel">
-                        <!-- single feature inner -->
-                        <div class="single-feature-inner text-center">
-                            <div class="feature-icon"><img src="<?php echo base_url(); ?>assets/homeweb/img/icons/project-management.svg" class="svg" alt=""></div>
-                            <h5>Innovación en <br>tus manos</h5>
-                            <p>Sabemos lo que necesitas y trabajamos a diario para mejorar nuestro sistema.</p>
-                        </div>
-                        <!-- End of single feature inner -->
 
-                        <!-- single feature inner -->
-                        <div class="single-feature-inner text-center">
-                            <div class="feature-icon"><img src="<?php echo base_url(); ?>assets/homeweb/img/icons/solution.svg" class="svg" alt=""></div>
-                            <h5>Actualización<br> constante</h5>
-                            <p>Mejoramos cada día nuestra plataforma para que tu uso en ella, sea espectacular.</p>
-                        </div>
-                        <!-- End of single feature inner -->
-
-                        <!-- single feature inner -->
-                        <div class="single-feature-inner text-center">
-                            <div class="feature-icon"><img src="<?php echo base_url(); ?>assets/homeweb/img/icons/planning.svg" class="svg" alt=""></div>
-                            <h5>Adaptación a <br>Dispositivos</h5>
-                            <p>Resoluciones modificadas de cualquier dispositivo móvil, tablet o ordenador.</p>
-                        </div>
-                        <!-- End of single feature inner -->
-
-                        <!-- single feature inner -->
-                        <div class="single-feature-inner text-center">
-                            <div class="feature-icon"><img src="<?php echo base_url(); ?>assets/homeweb/img/icons/goal.svg" class="svg" alt=""></div>
-                            <h5>Seguridad <br>centralizada</h5>
-                            <p>Sistema avanzado de seguridad informática, técnico y protección de cifrado de datos.</p>
-                        </div><!-- End of single feature inner -->
-                    </div><!--/.feature-carousel-->
-                </div><!--/.col-->
-            </div><!--/.row-->
         </div><!--/.container-->
     </section><!-- End of feature area -->
 
+<!-- Contenedor Empleados -->
+    <section class="pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 col-sm-5">
+                    <!-- user ineract text -->
+                    <div class="user-interact-inner">
+                        <div class="interact-icon">
+                            <img src="<?php echo base_url(); ?>assets/homeweb/img/icons/solution1.svg" class="svg" alt="">
+                        </div>
+                        <h2>Plataforma de Gestión para Gerentes</h2>
+                        <p>
+                            Gestiona y exporta los registros de tus empleados, sus horarios asignados con su ficha de entrada y de salida con total comodidad.
+                        </p>
+                        <a href="https://verificar.me/panel/registro" class="btn">Pruebalo ahora 15 días gratis</a>
+                    </div>
+                    <!--End of user ineract text -->
+                </div>
+                <div class="col-lg-7 col-sm-7">
+                    <!-- user interact image -->
+                    <div class="user-interact-image type2">
+                        <img src="<?php echo base_url(); ?>assets/homeweb/img/feature/user-interact2.png"  alt="">
+                    </div>
+                    <!-- End of user interact image -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- interact user -->
+    <!-- interact user -->
+    <section class="bg-2 pt-120 pb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-sm-7">
+                    <!-- user interact image -->
+                    <div class="user-interact-image">
+                        <img src="<?php echo base_url(); ?>assets/homeweb/img/feature/user-interact.png"  alt="">
+                    </div>
+                    <!-- End of user interact image -->
+                </div>
+                <div class="col-lg-5 col-sm-5">
+                    <!-- user ineract text -->
+                    <div class="user-interact-inner">
+                        <div class="interact-icon">
+                            <img src="<?php echo base_url(); ?>assets/homeweb/img/icons/teamwork.svg" class="svg" alt="">
+                        </div>
+                        <h2>Plataforma de Gestión para Empleados</h2>
+                        <p>
+                            Accede al sistema para observar las horas trabajadas y tus movimientos en las entradas y salidas del trabajo con total facilidad.
+                        </p>
+                        <a href="https://verificar.me/panel/" class="btn">Empieza ahora</a>
+                    </div>
+                    <!--End of user ineract text -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- interact user -->
     <!-- Counter up area -->
     <section class="border-top pt-120 pb-80">
         <div class="container">
@@ -223,65 +233,9 @@
         </div><!-- /.container -->
     </section><!-- /.End of Counter up area -->
 
-    <!-- interact user -->
-    <section class="bg-2 pt-120 pb-120">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 col-sm-7">
-                    <!-- user interact image -->
-                    <div class="user-interact-image">
-                        <img src="<?php echo base_url(); ?>assets/homeweb/img/feature/user-interact.png"  alt="">
-                    </div>
-                    <!-- End of user interact image -->
-                </div>
-                <div class="col-lg-5 col-sm-5">
-                    <!-- user ineract text -->
-                    <div class="user-interact-inner">
-                        <div class="interact-icon">
-                            <img src="<?php echo base_url(); ?>assets/homeweb/img/icons/teamwork.svg" class="svg" alt="">
-                        </div>
-                        <h2>Plataforma de Gestión para Gerentes</h2>
-                        <p>
-                            Gestiona y exporta los registros de tus empleados, sus horarios asignados con su ficha de entrada y de salida con total comodidad.
-                        </p>
-                        <a href="https://verificar.me/panel/" class="btn">Empieza ahora</a>
-                    </div>
-                    <!--End of user ineract text -->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- interact user -->
 
-    <!-- interact user -->
-    <section class="pt-120 pb-120">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-sm-5">
-                    <!-- user ineract text -->
-                    <div class="user-interact-inner">
-                        <div class="interact-icon">
-                            <img src="<?php echo base_url(); ?>assets/homeweb/img/icons/solution1.svg" class="svg" alt="">
-                        </div>
-                        <h2>Plataforma de Gestión para Empleados</h2>
-                        <p>
-                            Accede al sistema para observar las horas trabajadas y tus movimientos en las entradas y salidas del trabajo con total facilidad.
-                        </p>
-                        <a href="https://verificar.me/panel/registro" class="btn">Crear cuenta</a>
-                    </div>
-                    <!--End of user ineract text -->
-                </div>
-                <div class="col-lg-7 col-sm-7">
-                    <!-- user interact image -->
-                    <div class="user-interact-image type2">
-                        <img src="<?php echo base_url(); ?>assets/homeweb/img/feature/user-interact2.png"  alt="">
-                    </div>
-                    <!-- End of user interact image -->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- interact user -->
+
+
 
     <!-- app video -->
     <section class="app-video">
@@ -352,182 +306,76 @@
     <!-- End of app screen -->
 
     <!-- app pricing plan -->
-    <section class="pb-90" id='pricing'>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-12 col-lg-8">
-                    <!-- section title -->
-                    <div class="section-title text-center">
-                        <h2>Planes y Precios</h2>
-                        <h5>Precios competentes enfocados a<br> las pequeñas-medias empresas.</h5>
-                    </div>
-                    <!-- End of section title -->
-                </div>
-            </div>
-            <div class="row">
-                <?php foreach ($planes as $plan) { ?>
-                <div class="col-md-6 col-lg-4">
-                    <!--Single price plan -->
-                    <div class="single-price-plan <?php if($plan->url == 'pro'){ echo 'active'; } ?> text-center">
-                        <div class="single-price-top">
-                            <h4><?php echo $plan->nombre; ?></h4>
-                            <span><?php echo $plan->precio; ?>€</span>
-                        </div>
-                        <div class="single-price-body">
-                            <div class="price-list">
-                                <ul>
-                                    <li>
-                                        <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                        <?php if($plan->cant_empresas == 1){ ?>
-                                        <?php echo $plan->cant_empresas; ?> empresa
-                                        <?php }else{ ?>
-                                        <?php echo $plan->cant_empresas; ?> empresas
-                                        <?php } ?>
-                                    </li>
-                                    <li>
-                                        <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                        <?php if($plan->cant_establecimientos == 1){ ?>
-                                        <?php echo $plan->cant_establecimientos; ?> establecimiento
-                                        <?php }else{ ?>
-                                        <?php echo $plan->cant_establecimientos; ?> establecimientos
-                                        <?php } ?>
-                                    </li>
-                                    <li>
-                                        <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                        <?php if($plan->cant_empleados == 1){ ?>
-                                        <?php echo $plan->cant_empleados; ?> empleado x establecimiento
-                                        <?php }else{ ?>
-                                        <?php echo $plan->cant_empleados; ?> empleados x establecimiento
-                                        <?php } ?>
-                                    </li>
-                                    <li>
-                                        <?php if($plan->url == 'pro' || $plan->url == 'ultra'){ ?>
-                                        <span><i class="fa fa-check" aria-hidden="true"></i></span>
-                                        <?php }else{ ?>
-                                        <span><i class="fa fa-times" aria-hidden="true"></i></span>
-                                        <?php } ?>
-                                        Soporte 24h
-                                    </li>
-                                </ul>
-                            </div>
-                            <a href="<?php echo base_url(); ?>suscripcion/registro/<?php echo $plan->url; ?>" class="btn">Adquirir</a>
-                        </div>
-                    </div>
-                    <!--end of Single price plan -->
-                </div>
-                <?php } ?>
-            </div>
-        </div>
-    </section>
-    <!-- End of app pricing plan -->
-
-    <!-- testimonial area -->
-    <section class="pt-120 pb-110 bg-2">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="testimonial-author-arousel text-center">
-                        <div class="testimonial-author-inner">
-                            <div class="author-carousel owl-carousel">
-                                <div class="single-author-imge">
-                                    <img src="<?php echo base_url(); ?>assets/homeweb/img/feature/author3.png" alt="">
-                                </div>
-                                <div class="single-author-imge">
-                                    <img src="<?php echo base_url(); ?>assets/homeweb/img/feature/author2.png" alt="">
-                                </div>
-                                <div class="single-author-imge">
-                                    <img src="<?php echo base_url(); ?>assets/homeweb/img/feature/author1.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="testimonial-author-comment text-center">
-                        <div class="author-comment-carousel owl-carousel">
-                            <div class="single-author-comment">
-                                <h4>This is due to their excellent service, competitive<br> pricing and customer support. It’s throughly<br> refresing to get such
-                                a personal touch.</h4>
-                                <p>Shirley Smith</p>
-                            </div>
-
-                            <div class="single-author-comment">
-                                <h4>This is due to their excellent service, competitive<br> pricing and customer support. It’s throughly<br> refresing to get such
-                                a personal touch.</h4>
-                                <p>Shirley Smith</p>
-                            </div>
-                            <div class="single-author-comment">
-                                <h4>This is due to their excellent service, competitive<br> pricing and customer support. It’s throughly<br> refresing to get such
-                                a personal touch.</h4>
-                                <p>Shirley Smith</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--End of testimonial area -->
-
-    <!-- our partner -->
-    <section class="pt-120 pb-120">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <!-- partner carosel inner -->
-                    <div class="partner-carousel-wrap">
-                        <div class="partner-carousel owl-carousel">
-                            <!-- single partner -->
-                            <div class="single-partner">
-                                <img src="<?php echo base_url(); ?>assets/homeweb/img/partner2.png" alt="">
-                            </div>
-                            <!-- End of single partner -->
-
-                            <!-- single partner -->
-                            <div class="single-partner">
-                                <img src="<?php echo base_url(); ?>assets/homeweb/img/partner2.png" alt="">
-                            </div>
-                            <!-- End of single partner -->
-
-                            <!-- single partner -->
-                            <div class="single-partner">
-                                <img src="<?php echo base_url(); ?>assets/homeweb/img/partner2.png" alt="">
-                            </div>
-                            <!-- End of single partner -->
-
-                            <!-- single partner -->
-                            <div class="single-partner">
-                                <img src="<?php echo base_url(); ?>assets/homeweb/img/partner2.png" alt="">
-                            </div>
-                            <!-- End of single partner -->
-                        </div>
-                    </div>
-                    <!--End of  partner carosel inner -->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of our partner -->
+      <section class="pb-90" id='pricing'>
+          <div class="container">
+              <div class="row justify-content-center">
+                  <div class="col-md-12 col-lg-8">
+                      <!-- section title -->
+                      <div class="section-title text-center">
+                          <h2>Planes y Precios</h2>
+                          <h5>Precios competentes enfocados a<br> las pequeñas-medias empresas.</h5>
+                      </div>
+                      <!-- End of section title -->
+                  </div>
+              </div>
+              <div class="row">
+                  <?php foreach ($planes as $plan) { ?>
+                  <div class="col-md-6 col-lg-4">
+                      <!--Single price plan -->
+                      <div class="single-price-plan <?php if($plan->url == 'pro'){ echo 'active'; } ?> text-center">
+                          <div class="single-price-top">
+                              <h4><?php echo $plan->nombre; ?></h4>
+                              <span><?php echo $plan->precio; ?>€</span>
+                          </div>
+                          <div class="single-price-body">
+                              <div class="price-list">
+                                  <ul>
+                                      <li>
+                                          <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                                          <?php if($plan->cant_empresas == 1){ ?>
+                                          <?php echo $plan->cant_empresas; ?> empresa
+                                          <?php }else{ ?>
+                                          <?php echo $plan->cant_empresas; ?> empresas
+                                          <?php } ?>
+                                      </li>
+                                      <li>
+                                          <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                                          <?php if($plan->cant_establecimientos == 1){ ?>
+                                          <?php echo $plan->cant_establecimientos; ?> establecimiento
+                                          <?php }else{ ?>
+                                          <?php echo $plan->cant_establecimientos; ?> establecimientos
+                                          <?php } ?>
+                                      </li>
+                                      <li>
+                                          <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                                          <?php if($plan->cant_empleados == 1){ ?>
+                                          <?php echo $plan->cant_empleados; ?> empleado x establecimiento
+                                          <?php }else{ ?>
+                                          <?php echo $plan->cant_empleados; ?> empleados x establecimiento
+                                          <?php } ?>
+                                      </li>
+                                      <li>
+                                          <?php if($plan->url == 'pro' || $plan->url == 'ultra'){ ?>
+                                          <span><i class="fa fa-check" aria-hidden="true"></i></span>
+                                          <?php }else{ ?>
+                                          <span><i class="fa fa-times" aria-hidden="true"></i></span>
+                                          <?php } ?>
+                                          Soporte 24h
+                                      </li>
+                                  </ul>
+                              </div>
+                              <a href="<?php echo base_url(); ?>suscripcion/registro/<?php echo $plan->url; ?>" class="btn">Adquirir</a>
+                          </div>
+                      </div>
+                      <!--end of Single price plan -->
+                  </div>
+                  <?php } ?>
+              </div>
+          </div>
+      </section>
+      <!-- End of app pricing plan -->
 
 
-
-    <!-- download app -->
-    <section class="border-top pt-110 pb-150">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10 col-md-12">
-                    <div class="download-app-inner text-center">
-                        <h2 class="h1">
-                            Crea una cuenta hoy mismo &<br>
-                            recibe 2 meses gratis.
-                        </h2>
-
-                        <a href="https://verificar.me/panel/registro" class="btn">Crear cuenta</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- End of download app -->
 
     <footer class="footer">
         <div class="footerbg">
@@ -540,7 +388,7 @@
                         <!-- footer widget -->
                         <div class="footer-widget">
                             <div class="footer-logo">
-                                <a href="index.html"><img src="<?php echo base_url(); ?>assets/homeweb/img/logo.png" alt=""></a>
+                                <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets/homeweb/img/logo.svg" alt=""></a>
                             </div>
                             <p>Plataforma para el registro de horas de trabajadores. Acceso para gerentes y empleados a registros a traves del ordenador, tablet o movil.</p>
                             <!-- footer social area -->
@@ -568,7 +416,7 @@
                                 <ul class="address-list">
                                     <li>
                                         <span><i class="fa  fa-phone-square"></i></span>
-                                        <a href="tel:+34658919995">658 919 995</a>
+                                        <a href="tel:+34946754604">+34 946 754 604</a>
                                     </li>
                                     <li>
                                         <span><i class="fa  fa-envelope"></i></span>
@@ -576,7 +424,8 @@
                                     </li>
                                     <li>
                                         <span><i class="fa  fa-map"></i></span>
-                                        C/ Licenciado Poza 31,<br> 48011 Bilbao, España.
+                                        C/ Licenciado Poza 31,
+										<br>48011 Bilbao, España.
                                     </li>
                                 </ul>
                             </div>
@@ -595,11 +444,10 @@
                             <div class="extra-link">
                                 <div class="link-left">
                                     <ul>
-                                        <li><a href="https://verificar.me/panel">Iniciar sesión</a></li>
-                                        <li><a href="https://verificar.me/app">Descargar APP</a></li>
-                                        <!-- <li><a href="https://verificar.me/redes">Redes Sociales</a></li> -->
-                                        <li><a href="https://verificar.me/guia">Como funciona</a></li>
-                                        <li><a href="https://verificar.me/faq">Preguntas Frecuentes</a></li>
+                                        <li><a href="<?php echo base_url(); ?>panel/">Iniciar sesión</a></li>
+                                        <li><a href="<?php echo base_url(); ?>app/">Descargar APP</a></li>
+                                        <li><a href="<?php echo base_url(); ?>faq/">Preguntas Frecuentes</a></li>
+										                    <li><a href="<?php echo base_url(); ?>contacto/">Contacto</a></li>
                                     </ul>
                                 </div>
 
@@ -612,7 +460,7 @@
                             <div class="widget-body">
                                 <div class="twetter-post-inner">
                                     <div class="footer-post-details">
-                                        @Verificar.me ¡Ya estamos aquí! Para celebrarlo, ¡las <strong>nuevas cuentas tendran 2 meses de suscripcion gratis</strong>!. <br><a href="http://yhdj58.tp8/JK">http://yhdj58.tp8/JK</a>
+                                        @Verificar.me ¡Ya estamos aquí! Para celebrarlo, ¡las <strong>nuevas cuentas tendran 15 días de suscripcion gratis</strong>!. <br><a href="http://yhdj58.tp8/JK">http://yhdj58.tp8/JK</a>
                                     </div>
                                     <div class="twetter-post">
                                         <span><i class="fa fa-twitter"></i></span>
@@ -627,16 +475,21 @@
         </div>
         <div class="footer-bottom">
             <div class="footer-text text-center">
-                <p><a href="https://verificar.me/terms.html">Términos y Condiciones</a>  |  <a href="https://verificar.me/legal">Aviso Legal</a>  |  <a href="https://verificar.me/jobs">Empleo</a>  |  <a href="https://verificar.me/app">App</a>   |  <a href="https://verificar.me/opinion">Envía tu opinión</a><br><br>
-                  © copyright 2019 <a href="https://verificar.me">Verificar.me</a> | Derechos reservados by <a href="https://pixelfactory.es">P.F</a></p>
+                <p><a href="<?php echo base_url(); ?>terminos-condiciones.php">Términos y Condiciones</a>  |  <a href="<?php echo base_url(); ?>politica-privacidad.php">Política Privacidad</a>  |  <a href="<?php echo base_url(); ?>app">Descargar App</a>   |  <a href="<?php echo base_url(); ?>opinion">Envía tu opinión</a><br><br>
+                  © 2019 <a href="https://verificar.me">Verificar.me</a> - Derechos reservados | by <a href="https://pixelfactory.es">P.F</a></p>
             </div>
         </div>
+
     </footer>
 
+    <!-- back to top -->
     <div class="back-to-top">
         <a href="#"><i class="fa fa-chevron-up"></i></a>
     </div>
+    <!-- back to top -->
 
+
+    <!-- JS Files -->
     <script src="<?php echo base_url(); ?>assets/homeweb/js/jquery-3.3.1.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/homeweb/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/homeweb/plugins/waypoints/jquery.waypoints.min.js"></script>
