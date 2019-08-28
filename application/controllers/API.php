@@ -17,9 +17,9 @@ class API extends Base_Controller {
 
 	public function login()
 	{
-
-		$login_correo = "demo@verificar.me";
-		$login_password = "c514c91e4ed341f263e458d44b3bb0a7";
+		
+		$login_correo = $this->input->post('f_login_correo');
+		$login_password = $this->input->post('f_login_password');
 		
 		$validacion = $this->usuario_model->login($login_correo, $login_password);
 
