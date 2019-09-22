@@ -1,4 +1,4 @@
-<div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+<div class="content-wrapper-before gradient-45deg-indigo-blue"></div>
 
 <div class="breadcrumbs-dark pb-2 pt-1" id="breadcrumbs-wrapper">
   	<!-- Search for small screen-->
@@ -63,9 +63,9 @@
 	<div class="container">
 		<div class="section">
 			<?php if($cuenta->cant_empresas >= $cuenta->suscripcion_cant_empresas){ ?>
-			<div class="card-alert card gradient-45deg-red-pink center-align card-alert-suscripcion">
+			<div class="card-alert card cyan">
 				<div class="card-content white-text">
-					<p><i class="material-icons">error</i> ATENCIÓN: Ha llegado al máximo de empresas posibles por crear. Si desea seguir agregando más, deberá <a href="#">actualizar su suscripción</a>.</p>
+					<p><i class="material-icons">error</i> ATENCIÓN: Ha llegado al máximo de establecimientos posibles por crear. Si desea seguir agregando más, deberá <a href="#">actualizar su suscripción</a>.</p>
 				</div>
 			</div>
 			<?php } ?>
@@ -81,10 +81,10 @@
 										<thead>
 											<tr>
 												<th>id</th>
-												<th class="mismalinea">Nombre</th>
-												<th width="1%">DNI</th>
-												<th width="1%">NIF</th>
-												<th width="1%">Acciones</th>
+												<th class="mismalinea"><strong>Nombre</strong></th>
+												<th width="1%"><strong>DNI</strong></th>
+												<th width="1%"><strong>NIF</strong></th>
+												<th width="1%"><strong>Acciones</strong></th>
 											</tr>
 										</thead>
 										<tbody>

@@ -65,12 +65,12 @@
 						// opciones += '<a href="empresas/empresa/'+row.codigo+'" class="waves-effect waves-light btn-small">Administrar</a> ';
 						opciones += '<a href="empresas/editar/'+row.codigo+'" class="waves-effect waves-light btn-small cyan"><i class="material-icons">edit</i></a> ';
 						if(row.estado == 1){
-							opciones += '<button type="button" onclick="suspender_empresa(\''+row.codigo+'\', \''+row.nombre+'\')" class="waves-effect waves-light btn-small orange darken-4"><i class="material-icons">block</i></button> ';	
+							opciones += '<button type="button" onclick="suspender_empresa(\''+row.codigo+'\', \''+row.nombre+'\')" class="waves-effect waves-light btn-small orange darken-4"><i class="material-icons left">block</i> Suspender</button> ';	
 						}
 						if(row.estado == 2){
-							opciones += '<button type="button" onclick="activar_empresa(\''+row.codigo+'\', \''+row.nombre+'\')" class="waves-effect waves-light btn-small blue darken-4"><i class="material-icons">cached</i></button> ';
+							opciones += '<button type="button" onclick="activar_empresa(\''+row.codigo+'\', \''+row.nombre+'\')" class="waves-effect waves-light btn-small blue darken-4"><i class="material-icons left">cached</i> Re-Activar</button> ';
 						}
-						opciones += '<button type="button" onclick="eliminar_empresa(\''+row.codigo+'\', \''+row.nombre+'\')" class="waves-effect waves-light red darken-4 btn-small"><i class="material-icons">delete</i></button> ';
+						opciones += '<button type="button" onclick="eliminar_empresa(\''+row.codigo+'\', \''+row.nombre+'\')" class="waves-effect waves-light red darken-4 btn-small"><i class="material-icons left">delete</i> Eliminar</button> ';
 	            		opciones += '</div>';
 
 			            return opciones;

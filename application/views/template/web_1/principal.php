@@ -112,7 +112,7 @@
                     <div class="col-lg-5 offset-lg-1 col-md-4 offse-xl-2">
                         <!-- banner image-->
                         <div class="banner-image">
-                            <img src="<?php echo base_url(); ?>assets/homeweb/img/banner/mockup.png" alt="">
+                            <img src="<?php echo base_url(); ?>assets/homeweb/img/banner/mockup.gif" alt="">
                         </div>
                         <!--End of banner image-->
                     </div>

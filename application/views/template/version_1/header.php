@@ -59,8 +59,8 @@
     </div>
 
     <header class="page-topbar" id="header">
-        <div class="navbar navbar-fixed">
-            <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-dark gradient-45deg-indigo-purple no-shadow">
+        <div class="navbar">
+            <nav class="navbar-main navbar-color nav-collapsible sideNav-lock navbar-dark gradient-45deg-indigo-blue no-shadow">
                 <div class="nav-wrapper">
                     <!-- <div class="header-search-wrapper hide-on-med-and-down"><i class="material-icons">search</i>
                       <input class="header-search-input z-depth-2" type="text" name="Search" placeholder="Busca aqui empleados, establecimientos ...">

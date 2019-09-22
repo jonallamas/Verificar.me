@@ -354,12 +354,12 @@
 
 .pink.accent-2
 {
-    background-color: #ff4081 !important;
+    background-color: #010bff !important;
 }
 
 .pink-text.text-accent-2
 {
-    color: #ff4081 !important;
+    color: #010bff !important;
 }
 
 .pink.accent-3
@@ -4600,12 +4600,12 @@ li.home:before
 
 .pink.accent-2
 {
-    background-color: #ff4081 !important;
+    background-color: #010bff !important;
 }
 
 .pink-text.text-accent-2
 {
-    color: #ff4081 !important;
+    color: #010bff !important;
 }
 
 .pink.accent-3
@@ -7106,10 +7106,10 @@ li.home:before
 .gradient-45deg-indigo-blue
 {
       background: #303f9f;
-      background: -webkit-linear-gradient(45deg, #303f9f, #1976d2) !important;
-      background: -moz- oldlinear-gradient(45deg, #303f9f, #1976d2) !important;
-      background:      -o-linear-gradient(45deg, #303f9f, #1976d2) !important;
-      background:         linear-gradient(45deg, #303f9f, #1976d2) !important;
+      background: -webkit-linear-gradient(95deg, #303f9f, #1976d2) !important;
+      background: -moz- oldlinear-gradient(95deg, #303f9f, #1976d2) !important;
+      background:      -o-linear-gradient(95deg, #303f9f, #1976d2) !important;
+      background:         linear-gradient(95deg, #303f9f, #1976d2) !important;
 }
 .gradient-45deg-indigo-blue.gradient-shadow
 {
@@ -7147,11 +7147,11 @@ li.home:before
 
 .gradient-45deg-purple-deep-orange
 {
-      background: #8e24aa;
-      background: -webkit-linear-gradient(45deg, #8e24aa, #ff6e40) !important;
-      background: -moz- oldlinear-gradient(45deg, #8e24aa, #ff6e40) !important;
-      background:      -o-linear-gradient(45deg, #8e24aa, #ff6e40) !important;
-      background:         linear-gradient(45deg, #8e24aa, #ff6e40) !important;
+      background: #010bff;
+      background: -webkit-linear-gradient(45deg, #303f9f, #010bff) !important;
+      background: -moz- oldlinear-gradient(45deg, #303f9f, #010bff) !important;
+      background:      -o-linear-gradient(45deg, #303f9f, #010bff) !important;
+      background:         linear-gradient(45deg, #303f9f, #010bff) !important;
 }
 .gradient-45deg-purple-deep-orange.gradient-shadow
 {
@@ -7887,9 +7887,9 @@ span.badge.pill
 
     color: #fff;
     border-radius: 50%;
-    background-color: #ff4081;
-    -webkit-box-shadow: 0 0 10px 0 #ff4081;
-            box-shadow: 0 0 10px 0 #ff4081;
+    background-color: #010bff;
+    -webkit-box-shadow: 0 0 10px 0 #010bff;
+            box-shadow: 0 0 10px 0 #010bff;
 }
 
 .navbar #notifications-dropdown h5
@@ -9322,7 +9322,7 @@ nav.display-none.search-sm .nav-wrapper form .input-field input.search-box-sm:no
          -o-transform: translateY(0%);
             transform: translateY(0%);
 
-    color: #ff4081;
+    color: #010bff;
 }
 
 .input-field label.active
@@ -9344,7 +9344,7 @@ nav.display-none.search-sm .nav-wrapper form .input-field input.search-box-sm:no
          -o-transform: translateY(0%);
             transform: translateY(0%);
 
-    color: #ff4081;
+    color: #010bff;
 }
 
 .select-field label.active

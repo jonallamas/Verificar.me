@@ -121,7 +121,7 @@
     }
 
     .main-menu-wrap .btn {
-        border-color: #7B1FA2;
+        border-color: #010bff;
     }
 
     /* Header */
@@ -525,7 +525,7 @@
     }
 
     .header-2.inner-header a.btn {
-        border-color: #7B1FA2;
+        border-color: #010bff;
     }
 
     .banner-inner-area.banner-area1.banner2:before {
@@ -573,7 +573,7 @@
     }
 
     .single-price-plan.active {
-        border: 2px solid #7B1FA2;
+        border: 2px solid #010bff;
         padding: 70px 0 80px;
         margin-top: -20px;
         margin-bottom: 20px;

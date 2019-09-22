@@ -114,7 +114,7 @@
         </div>
     </div> -->
 
-    <footer class="page-footer footer footer-static footer-dark gradient-45deg-indigo-purple gradient-shadow navbar-border navbar-shadow">
+    <footer class="page-footer footer footer-static footer-dark gradient-45deg-indigo-blue gradient-shadow navbar-border navbar-shadow">
       <div class="footer-copyright">
         <div class="container"><span>Copyright &copy; 2019 V1.1 - <a href="https://verificar.me" target="_blank">Verificar.me</a></span><span class="right hide-on-small-only"><a href="https://verificar.me/ayuda">¿Necesitas ayuda?</a></span></div>
       </div>

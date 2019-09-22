@@ -92,7 +92,7 @@
 	<div class="container">
 		<div class="section">
 			<?php if($cuenta->cant_establecimientos >= $cuenta->suscripcion_cant_establecimientos){ ?>
-			<div class="card-alert card gradient-45deg-red-pink center-align card-alert-suscripcion">
+			<div class="card-alert card cyan">
 				<div class="card-content white-text">
 					<p><i class="material-icons">error</i> ATENCIÓN: Ha llegado al máximo de establecimientos posibles por crear. Si desea seguir agregando más, deberá <a href="#">actualizar su suscripción</a>.</p>
 				</div>
@@ -110,11 +110,11 @@
 										<thead>
 											<tr>
 												<th>id</th>
-												<th class="mismalinea">Nombre</th>
-												<th width="1%">Empresa</th>
-                        						<th width="1%">Población</th>
-												<th width="1%">Provincia</th>
-												<th width="1%">Acciones</th>
+												<th class="mismalinea"><strong>Nombre</strong></th>
+												<th width="1%"><strong>Empresa</strong></th>
+                        						<th width="1%"><strong>Población</strong></th>
+												<th width="1%"><strong>Provincia</strong></th>
+												<th width="1%"><strong>Acciones</strong></th>
 											</tr>
 										</thead>
 										<tbody>
