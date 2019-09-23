@@ -110,7 +110,7 @@ class Panel extends Base_Controller {
 				'conectado' => 0, 
 				'error' => 1, 
 				'error_tipo' => 1, 
-				'error_text' => 'Información de logueo incorrecta'
+				'error_text' => 'Información de inicio sesion incorrecta'
 			);
 
 			echo json_encode($return_data);

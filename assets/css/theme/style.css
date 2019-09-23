@@ -8110,7 +8110,8 @@ nav.display-none.search-sm .nav-wrapper form .input-field input.search-box-sm:no
 }
 .brand-sidebar .logo-wrapper a.brand-logo img
 {
-    height: 18px;
+    height: 100%;
+	width:100%;
 }
 .brand-sidebar .logo-wrapper a.navbar-toggler
 {
@@ -8223,7 +8224,7 @@ nav.display-none.search-sm .nav-wrapper form .input-field input.search-box-sm:no
 
 .sidenav
 {
-    top: 64px;
+    top: 74px;
 
     overflow: hidden;
 
