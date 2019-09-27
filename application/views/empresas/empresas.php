@@ -47,8 +47,8 @@
 			        	</div>
 		          		<div class="row">
 		            		<div class="input-field col s12 right-align">
-		              			<button type="button" class="waves-effect btn-flat" onclick="mostrar_info('modulo_carga', 'modulo_lista');">Cancelar</button> 
-		              			<button class="btn waves-effect waves-light" type="submit">Crear</button> 
+		              			<button type="button" class="waves-effect btn-flat" onclick="mostrar_info('modulo_carga', 'modulo_lista');">Cancelar</button>
+		              			<button class="btn waves-effect waves-light" type="submit">Crear</button>
 		            		</div>
 		          		</div>
 			      	</form>
@@ -63,7 +63,7 @@
 	<div class="container">
 		<div class="section">
 			<?php if($cuenta->cant_empresas >= $cuenta->suscripcion_cant_empresas){ ?>
-			<div class="card-alert card cyan">
+			<div class="card-alert card colormenupers">
 				<div class="card-content white-text">
 					<p><i class="material-icons">error</i> ATENCIÓN: Ha llegado al máximo de establecimientos posibles por crear. Si desea seguir agregando más, deberá <a href="#">actualizar su suscripción</a>.</p>
 				</div>
@@ -81,10 +81,10 @@
 										<thead>
 											<tr>
 												<th>id</th>
-												<th class="mismalinea"><strong>Nombre</strong></th>
+												<th width="2%" ><strong>Nombre</strong></th>
 												<th width="1%"><strong>DNI</strong></th>
 												<th width="1%"><strong>NIF</strong></th>
-												<th width="1%"><strong>Acciones</strong></th>
+												<th width="1%" class="center-align"><strong>Acciones</strong></th>
 											</tr>
 										</thead>
 										<tbody>

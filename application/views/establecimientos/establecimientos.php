@@ -1,4 +1,4 @@
-<div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+<div class="content-wrapper-before gradient-45deg-indigo-blue"></div>
 
 <div class="breadcrumbs-dark pb-2 pt-1" id="breadcrumbs-wrapper">
   	<!-- Search for small screen-->
@@ -76,8 +76,8 @@
 		                </div>
 		          		<div class="row">
 		            		<div class="input-field col s12 right-align">
-		              			<button type="button" class="waves-effect btn-flat" onclick="mostrar_info('modulo_carga', 'modulo_lista');">Cancelar</button> 
-		              			<button class="btn waves-effect waves-light" type="submit">Crear</button> 
+		              			<button type="button" class="waves-effect btn-flat" onclick="mostrar_info('modulo_carga', 'modulo_lista');">Cancelar</button>
+		              			<button class="btn waves-effect waves-light" type="submit">Crear</button>
 		            		</div>
 		          		</div>
 			      	</form>
@@ -92,7 +92,7 @@
 	<div class="container">
 		<div class="section">
 			<?php if($cuenta->cant_establecimientos >= $cuenta->suscripcion_cant_establecimientos){ ?>
-			<div class="card-alert card cyan">
+			<div class="card-alert card colormenupers">
 				<div class="card-content white-text">
 					<p><i class="material-icons">error</i> ATENCIÓN: Ha llegado al máximo de establecimientos posibles por crear. Si desea seguir agregando más, deberá <a href="#">actualizar su suscripción</a>.</p>
 				</div>
@@ -110,11 +110,11 @@
 										<thead>
 											<tr>
 												<th>id</th>
-												<th class="mismalinea"><strong>Nombre</strong></th>
+												<th class="mismalinea" width="1%"><strong>Nombre</strong></th>
 												<th width="1%"><strong>Empresa</strong></th>
-                        						<th width="1%"><strong>Población</strong></th>
+                        <th width="1%"><strong>Población</strong></th>
 												<th width="1%"><strong>Provincia</strong></th>
-												<th width="1%"><strong>Acciones</strong></th>
+												<th width="1%" class="center-align"><strong>Acciones</strong></th>
 											</tr>
 										</thead>
 										<tbody>

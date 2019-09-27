@@ -1,4 +1,4 @@
-<div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+<div class="content-wrapper-before gradient-45deg-indigo-blue"></div>
 
 <div class="breadcrumbs-dark pb-2 pt-1" id="breadcrumbs-wrapper">
   	<!-- Search for small screen-->
@@ -133,7 +133,7 @@
 	#modalBuscador .input-field{
 		display: block;
 		position: relative;
-		margin-bottom: 35px;	
+		margin-bottom: 35px;
 	}
 </style>
 <?php if($establecimiento->estado == 1 && $establecimiento->cant_empleados < $cuenta->suscripcion_cant_empleados){ ?>

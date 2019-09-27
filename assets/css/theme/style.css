@@ -5332,6 +5332,9 @@ li.home:before
 {
     background-color: #00bcd4 !important;
 }
+.colormenupers{
+	background-color: #2a303d !important;
+}
 
 .cyan-text
 {
@@ -7113,8 +7116,8 @@ li.home:before
 }
 .gradient-45deg-indigo-blue.gradient-shadow
 {
-    -webkit-box-shadow: 0 6px 20px 0 rgba(25, 118, 210, .5) !important;
-            box-shadow: 0 6px 20px 0 rgba(25, 118, 210, .5) !important;
+    -webkit-box-shadow: 0 6px 20px 0 rgba(25, 118, 210, .2) !important;
+            box-shadow: 0 6px 20px 0 rgba(25, 118, 210, .2) !important;
 }
 
 .gradient-45deg-brown-brown
@@ -8111,7 +8114,7 @@ nav.display-none.search-sm .nav-wrapper form .input-field input.search-box-sm:no
 .brand-sidebar .logo-wrapper a.brand-logo img
 {
     height: 100%;
-	width:100%;
+	width:85%;
 }
 .brand-sidebar .logo-wrapper a.navbar-toggler
 {
@@ -8346,8 +8349,8 @@ nav.display-none.search-sm .nav-wrapper form .input-field input.search-box-sm:no
       background: -moz- oldlinear-gradient(45deg, #303f9f, #7b1fa2);
       background:      -o-linear-gradient(45deg, #303f9f, #7b1fa2);
       background:         linear-gradient(45deg, #303f9f, #7b1fa2);
-    -webkit-box-shadow: 3px 3px 20px 0 rgba(123, 31, 162, .5);
-            box-shadow: 3px 3px 20px 0 rgba(123, 31, 162, .5);
+    -webkit-box-shadow: 3px 3px 20px 0 rgba(123, 31, 162, .2);
+            box-shadow: 3px 3px 20px 0 rgba(123, 31, 162, .2);
 }
 .sidenav li a.active i
 {
@@ -9261,7 +9264,7 @@ nav.display-none.search-sm .nav-wrapper form .input-field input.search-box-sm:no
 #breadcrumbs-wrapper.breadcrumbs-dark .breadcrumbs-title,
 #breadcrumbs-wrapper.breadcrumbs-dark a
 {
-    color: rgba(255, 255, 255, .85);
+    color: rgba(255, 255, 255, .95);
 }
 #breadcrumbs-wrapper.breadcrumbs-inline .breadcrumbs-title,
 #breadcrumbs-wrapper.breadcrumbs-inline .breadcrumbs
