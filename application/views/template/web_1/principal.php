@@ -160,7 +160,7 @@
                 <div class="col-lg-7 col-sm-7">
                     <!-- user interact image -->
                     <div class="user-interact-image type2">
-                        <img src="<?php echo base_url(); ?>assets/homeweb/img/feature/user-interact2.png"  alt="">
+                        <img src="<?php echo base_url(); ?>assets/homeweb/img/feature/view-GestionGerentes.png"  alt="">
                     </div>
                     <!-- End of user interact image -->
                 </div>

@@ -1,4 +1,4 @@
-<div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+<div class="content-wrapper-before gradient-45deg-indigo-blue"></div>
 
 <div class="breadcrumbs-dark pb-2 pt-1" id="breadcrumbs-wrapper">
   	<!-- Search for small screen-->
