@@ -1,2 +1,2 @@
-# Verifica.me
-Sistema de Verifica.me
+# Verificar.me
+Sistema de Verificar.me
